@@ -1,0 +1,5 @@
+model,estimator,year_specification,citation_adjusted,n_publications,n_events,events_per_parameter,n_parameters,converged,iterations,all_themes_have_event,all_themes_have_non_event
+primary_hc3_linear_year_citation_adjusted,HC3 logistic,linear,True,1398,111,18.5,6,True,7,True,True
+hc3_linear_year_citation_omitted,HC3 logistic,linear,False,1398,111,22.2,5,True,6,True,True
+hc3_spline_year_citation_adjusted,HC3 logistic,spline,True,1398,111,12.333333333333334,9,True,7,True,True
+firth_linear_year_citation_adjusted,Firth penalized logistic,linear,True,1398,111,18.5,6,True,10,True,True

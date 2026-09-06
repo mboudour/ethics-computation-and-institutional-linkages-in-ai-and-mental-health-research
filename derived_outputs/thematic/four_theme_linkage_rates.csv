@@ -1,0 +1,37 @@
+model,theme,n_publications,n_funding_supported_P,funding_support_pct,n_policy_covered_P,policy_coverage_pct,n_P_G_ties,n_P_D_ties
+all_themed_publications__funding_support,Digital mental-health care and ethics,2621,249,9.50019076688287,68,2.5944296070202215,565,125
+all_themed_publications__funding_support,Mental-health risk prediction,1603,485,30.25577043044292,45,2.8072364316905802,1343,88
+all_themed_publications__funding_support,Neuropsychiatric assessment,1477,499,33.78469871360867,27,1.8280297901150981,2083,32
+all_themed_publications__funding_support,Social and affective detection,1445,161,11.141868512110726,21,1.453287197231834,317,48
+all_themed_publications__policy_coverage_through_2021,Digital mental-health care and ethics,314,65,20.70063694267516,34,10.828025477707007,136,66
+all_themed_publications__policy_coverage_through_2021,Mental-health risk prediction,377,143,37.93103448275862,34,9.018567639257293,395,52
+all_themed_publications__policy_coverage_through_2021,Neuropsychiatric assessment,485,224,46.18556701030928,26,5.360824742268041,865,31
+all_themed_publications__policy_coverage_through_2021,Social and affective detection,222,60,27.027027027027028,17,7.657657657657657,141,42
+all_themed_publications__policy_coverage_through_2020,Digital mental-health care and ethics,195,37,18.974358974358974,25,12.82051282051282,74,41
+all_themed_publications__policy_coverage_through_2020,Mental-health risk prediction,223,91,40.80717488789238,26,11.659192825112108,259,43
+all_themed_publications__policy_coverage_through_2020,Neuropsychiatric assessment,378,181,47.883597883597886,25,6.613756613756613,700,30
+all_themed_publications__policy_coverage_through_2020,Social and affective detection,137,43,31.386861313868614,14,10.218978102189782,96,33
+clear_assignments_margin_at_least_0_10__funding_support,Digital mental-health care and ethics,2355,210,8.9171974522293,61,2.5902335456475587,472,114
+clear_assignments_margin_at_least_0_10__funding_support,Mental-health risk prediction,1314,416,31.65905631659056,37,2.8158295281582952,1147,74
+clear_assignments_margin_at_least_0_10__funding_support,Neuropsychiatric assessment,1260,456,36.19047619047619,22,1.746031746031746,1939,24
+clear_assignments_margin_at_least_0_10__funding_support,Social and affective detection,1237,129,10.428455941794665,17,1.3742926434923202,253,40
+clear_assignments_margin_at_least_0_10__policy_coverage_through_2021,Digital mental-health care and ethics,261,52,19.923371647509576,29,11.11111111111111,113,59
+clear_assignments_margin_at_least_0_10__policy_coverage_through_2021,Mental-health risk prediction,306,117,38.23529411764706,27,8.823529411764707,321,39
+clear_assignments_margin_at_least_0_10__policy_coverage_through_2021,Neuropsychiatric assessment,433,211,48.72979214780601,21,4.849884526558892,829,23
+clear_assignments_margin_at_least_0_10__policy_coverage_through_2021,Social and affective detection,177,47,26.55367231638418,14,7.909604519774012,112,35
+clear_assignments_margin_at_least_0_10__policy_coverage_through_2020,Digital mental-health care and ethics,162,29,17.901234567901234,20,12.345679012345679,61,34
+clear_assignments_margin_at_least_0_10__policy_coverage_through_2020,Mental-health risk prediction,177,73,41.24293785310734,20,11.299435028248588,204,31
+clear_assignments_margin_at_least_0_10__policy_coverage_through_2020,Neuropsychiatric assessment,337,170,50.445103857566764,20,5.934718100890208,666,22
+clear_assignments_margin_at_least_0_10__policy_coverage_through_2020,Social and affective detection,109,33,30.275229357798167,12,11.009174311926607,80,28
+clear_assignments_margin_at_least_0_20__funding_support,Digital mental-health care and ethics,2111,182,8.621506395073425,54,2.55802936996684,415,105
+clear_assignments_margin_at_least_0_20__funding_support,Mental-health risk prediction,1073,353,32.898415657036345,33,3.075489282385834,973,68
+clear_assignments_margin_at_least_0_20__funding_support,Neuropsychiatric assessment,1089,412,37.83287419651056,19,1.7447199265381086,1780,21
+clear_assignments_margin_at_least_0_20__funding_support,Social and affective detection,1015,94,9.261083743842365,12,1.1822660098522169,189,28
+clear_assignments_margin_at_least_0_20__policy_coverage_through_2021,Digital mental-health care and ethics,217,40,18.433179723502306,27,12.442396313364055,86,56
+clear_assignments_margin_at_least_0_20__policy_coverage_through_2021,Mental-health risk prediction,256,101,39.453125,24,9.375,268,34
+clear_assignments_margin_at_least_0_20__policy_coverage_through_2021,Neuropsychiatric assessment,385,193,50.12987012987013,18,4.675324675324675,776,20
+clear_assignments_margin_at_least_0_20__policy_coverage_through_2021,Social and affective detection,129,34,26.356589147286826,11,8.527131782945736,81,27
+clear_assignments_margin_at_least_0_20__policy_coverage_through_2020,Digital mental-health care and ethics,135,22,16.296296296296298,18,13.333333333333334,50,31
+clear_assignments_margin_at_least_0_20__policy_coverage_through_2020,Mental-health risk prediction,147,63,42.857142857142854,18,12.244897959183673,166,27
+clear_assignments_margin_at_least_0_20__policy_coverage_through_2020,Neuropsychiatric assessment,297,153,51.515151515151516,17,5.723905723905724,614,19
+clear_assignments_margin_at_least_0_20__policy_coverage_through_2020,Social and affective detection,82,26,31.70731707317073,10,12.195121951219512,62,26

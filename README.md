@@ -8,9 +8,9 @@ This repository provides the **code, exact retrieval specification, deterministi
 
 ## Study design
 
-The study uses a publication-anchored relational design. It first retrieves candidate AI-and-mental-health publications and applies a deterministic local title/abstract screen. Grants are then retrieved only through grant identifiers recorded on retained publications; policy documents are retrieved only where their recorded publication identifiers contain a retained publication identifier. The raw relations are publication--grant, publication--policy document, and policy document--issuer.
+The study uses a publication-centred relational design. It first retrieves candidate AI-and-mental-health publications and applies a deterministic local title/abstract screen. A rule-defined, outcome-blind high-specificity subset then requires an available abstract with an explicit core mental-health phrase and an explicit AI/ML phrase other than \emph{neural network} alone. Grants are retained only through identifiers recorded on publications in that subset; policy documents are retained only where their recorded publication identifiers contain a retained publication identifier.
 
-The paper measures explicit, non-exclusive ethics/responsibility and computational-performance indicators in titles and available abstracts. It estimates conditional associations with Dimensions-recorded grant and policy-document linkage, accounts for publication-age eligibility in policy analyses, and tests local alignment of grant and policy-document ties with a publication-year-stratified permutation null.
+Publication titles and abstracts are represented with deterministic TF--IDF preprocessing and a four-component nonnegative matrix factorization (NMF). Component labels are operational descriptions based on ranked terms and fixed evidence packets; the full component weights and assignment margins are retained. The study estimates theme associations with Dimensions-recorded funding-support and policy-document coverage, describes author-affiliation, grant-funder, and policy-issuer institutions and countries, and tests local relation alignment with a 10,000-permutation publication-year-stratified null.
 
 ## Repository contents
 
@@ -21,6 +21,7 @@ The paper measures explicit, non-exclusive ethics/responsibility and computation
 | `derived_outputs/primary/` | Aggregate principal-model and network summaries. | No |
 | `derived_outputs/robustness/` | Aggregate sensitivity, diagnostic, and permutation summaries. | No |
 | `derived_outputs/screening/` | Aggregate screening-audit totals and rule-validation results. | No |
+| `derived_outputs/thematic/` | Aggregate four-theme composition, policy robustness, institutional-country, and alignment summaries. | No |
 | `manuscript/` | Manuscript source, bibliography, and supplementary-material source. | No |
 
 ## Exact candidate-publication query
@@ -48,7 +49,7 @@ All reported relations are **Dimensions-recorded linkages**. The results are des
 
 The associated manuscript should cite this repository as follows after it has been published:
 
-> Reproducibility materials are available at **[repository URL/DOI]**. The repository contains the exact retrieval specification and run metadata, local screening rules and audit summaries, indicator and topic-family dictionaries, relation-construction and analysis code, derived aggregate outputs, and reconstruction instructions for authorized Dimensions users. Raw Dimensions records are not redistributed where restricted by the Dimensions data-use agreement.
+> Reproducibility materials are available at **https://github.com/mboudour/ai-mental-health-institutional-linkages-reproducibility**. The repository contains the exact retrieval specification and run metadata, local screening rules and audit summaries, high-specificity subset rule, NMF and relation-construction code, derived aggregate outputs, and reconstruction instructions for authorized Dimensions users. Raw Dimensions records are not redistributed where restricted by the Dimensions data-use agreement.
 
 ## License
 

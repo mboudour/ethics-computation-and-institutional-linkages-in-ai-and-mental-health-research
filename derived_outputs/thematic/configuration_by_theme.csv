@@ -1,0 +1,17 @@
+candidate_theme,configuration,n_publications,mean_funding_support_degree,mean_policy_coverage_degree
+Digital mental-health care and ethics,both,20,2.2,2.25
+Digital mental-health care and ethics,funding_only,229,2.2751091703056767,0.0
+Digital mental-health care and ethics,neither,2324,0.0,0.0
+Digital mental-health care and ethics,policy_only,48,0.0,1.6666666666666667
+Mental-health risk prediction,both,33,3.5757575757575757,1.9696969696969697
+Mental-health risk prediction,funding_only,452,2.7101769911504423,0.0
+Mental-health risk prediction,neither,1106,0.0,0.0
+Mental-health risk prediction,policy_only,12,0.0,1.9166666666666667
+Neuropsychiatric assessment,both,16,5.375,1.125
+Neuropsychiatric assessment,funding_only,483,4.134575569358178,0.0
+Neuropsychiatric assessment,neither,967,0.0,0.0
+Neuropsychiatric assessment,policy_only,11,0.0,1.2727272727272727
+Social and affective detection,both,11,2.4545454545454546,2.727272727272727
+Social and affective detection,funding_only,150,1.9333333333333333,0.0
+Social and affective detection,neither,1274,0.0,0.0
+Social and affective detection,policy_only,10,0.0,1.8

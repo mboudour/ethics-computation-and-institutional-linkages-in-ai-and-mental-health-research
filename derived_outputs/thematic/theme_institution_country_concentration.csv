@@ -1,0 +1,31 @@
+theme,relation,n_target_entities,n_source_entity_incidence,top_1_share_pct,top_5_share_pct,hhi
+All high-specificity publications,P-PI author-affiliation institutions,4894,16669,1.1638370628112065,3.5275061491391204,0.0010533710354639978
+Digital mental-health care and ethics,P-PI author-affiliation institutions,2161,4373,1.4635261833981248,4.41344614680997,0.0014386244008498823
+Mental-health risk prediction,P-PI author-affiliation institutions,2346,5237,1.3557380179492076,3.952644643880084,0.0013609264932335243
+Neuropsychiatric assessment,P-PI author-affiliation institutions,1937,4892,1.0016353229762878,4.026982829108749,0.001590445194283189
+Social and affective detection,P-PI author-affiliation institutions,1362,2167,0.5999077065066913,2.6303645592985694,0.0011863568325401219
+All high-specificity publications,P-country author-affiliation countries,126,8615,20.52234474753337,48.705745792222864,0.07352578157184439
+Digital mental-health care and ethics,P-country author-affiliation countries,105,2624,20.69359756097561,48.74237804878049,0.07234376161882809
+Mental-health risk prediction,P-country author-affiliation countries,94,2341,25.074754378470736,50.704826997009825,0.08981564996393433
+Neuropsychiatric assessment,P-country author-affiliation countries,83,2172,20.626151012891345,52.071823204419886,0.07859658672744355
+Social and affective detection,P-country author-affiliation countries,85,1478,15.696887686062247,50.879566982408654,0.0713257684652302
+All high-specificity publications,G-GI funder institutions via P-G,138,3022,17.935142289874257,38.28590337524819,0.05215623701065339
+Digital mental-health care and ethics,G-GI funder institutions via P-G,81,490,16.93877551020408,39.59183673469388,0.051486880466472304
+Mental-health risk prediction,G-GI funder institutions via P-G,98,999,17.117117117117118,37.73773773773774,0.051720389057726406
+Neuropsychiatric assessment,G-GI funder institutions via P-G,100,1491,20.4560697518444,43.25955734406438,0.0643138958949314
+Social and affective detection,G-GI funder institutions via P-G,64,277,14.440433212996389,44.4043321299639,0.05550704427270002
+All high-specificity publications,G-country funder countries via P-G,33,3022,57.511581733951026,82.99139642620781,0.3500583192918816
+Digital mental-health care and ethics,G-country funder countries via P-G,24,490,58.16326530612245,85.91836734693878,0.36548937942523946
+Mental-health risk prediction,G-country funder countries via P-G,24,999,62.06206206206206,86.2862862862863,0.4036017999981964
+Neuropsychiatric assessment,G-country funder countries via P-G,29,1491,56.606304493628436,80.28169014084509,0.3388383059366708
+Social and affective detection,G-country funder countries via P-G,21,277,48.375451263537904,83.03249097472923,0.27297371267708426
+All high-specificity publications,D-DI policy-issuer institutions via P-D,49,214,19.158878504672895,56.074766355140184,0.08297667918595511
+Digital mental-health care and ethics,D-DI policy-issuer institutions via P-D,34,101,25.742574257425744,54.45544554455446,0.09695127928634452
+Mental-health risk prediction,D-DI policy-issuer institutions via P-D,20,75,21.333333333333336,62.66666666666666,0.1025777777777778
+Neuropsychiatric assessment,D-DI policy-issuer institutions via P-D,9,21,33.33333333333333,80.95238095238095,0.19727891156462582
+Social and affective detection,D-DI policy-issuer institutions via P-D,15,36,22.22222222222222,69.44444444444444,0.11882716049382717
+All high-specificity publications,D-country policy-issuer countries via P-D,18,214,33.64485981308411,78.50467289719624,0.1822866625906192
+Digital mental-health care and ethics,D-country policy-issuer countries via P-D,15,101,28.71287128712871,70.29702970297028,0.14557396333692774
+Mental-health risk prediction,D-country policy-issuer countries via P-D,10,75,53.333333333333336,86.66666666666666,0.3191111111111111
+Neuropsychiatric assessment,D-country policy-issuer countries via P-D,8,21,38.095238095238095,85.71428571428572,0.22902494331065754
+Social and affective detection,D-country policy-issuer countries via P-D,11,36,22.22222222222222,80.55555555555556,0.14660493827160495

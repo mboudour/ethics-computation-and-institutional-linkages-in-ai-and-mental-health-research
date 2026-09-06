@@ -1,0 +1,237 @@
+\documentclass[12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{authblk}
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{longtable}
+
+\geometry{margin=1in}
+\setstretch{1.30}
+\hypersetup{colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue}
+\microtypesetup{expansion=false}
+\let\footnote\thanks
+
+\newcommand{\maybefigure}[3]{%
+  \begin{figure}[#1]
+  \centering
+  \IfFileExists{#2}{\includegraphics[width=\linewidth]{#2}}{\fbox{\parbox[c][2.4in][c]{0.92\linewidth}{\centering Figure file pending: \texttt{\detokenize{#2}}}}}
+  \caption{#3}
+  \end{figure}%
+}
+
+\title{Ethics, Computation, and Institutional Linkages in AI and Mental-Health Research}
+
+\author[1]{Moses Boudourides}
+\author[2]{Niko M{\"a}nnikk{\"o}}
+\affil[1]{School of Professional Studies, Northwestern University, Evanston, IL, USA%
+\authorcr\texttt{Moses.Boudourides@northwestern.edu}}
+\affil[2]{Centre for Research and Innovation, Oulu University of Applied Sciences, Finland%
+\authorcr\texttt{mannikkon@gmail.com}}
+\date{September 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Artificial intelligence (AI) and mental-health research spans distinct clinical, technical, and care-oriented problem areas. We constructed a publication-centred relational dataset from Dimensions.ai, comprising 7,146 rule-defined, high-specificity AI-and-mental-health publications, 3,022 linked grants, and 214 linked policy documents. A four-component nonnegative matrix factorization of publication titles and abstracts provided a stable operational partition: mental-health risk prediction, digital mental-health care and ethics, social and affective detection, and neuropsychiatric assessment. Compared with digital mental-health care and ethics, risk prediction and neuropsychiatric assessment had substantially higher adjusted odds of recorded funding support. Policy-document coverage through 2021 was lower for neuropsychiatric assessment and social and affective detection; risk prediction did not differ reliably. Across the thematic corpus, publication funding-support and policy-document coverage relations co-occurred on the same publications more often than expected under a publication-year-stratified permutation null. We also describe author-affiliation, funder, and policy-issuer institutions and countries for each theme. The findings concern recorded database relations and thematic text structure; they do not establish causal effects, institutional intent, policy endorsement, or policy impact.
+\end{abstract}
+
+\section{Introduction}
+
+AI and machine-learning methods are increasingly used in mental-health research for assessment, prediction, intervention, monitoring, and the analysis of digital or clinical information \citep{straw2020artificial,beg2025,raygozal2025}. This expanding field combines computational development with questions of fairness, privacy, explainability, accountability, professional responsibility, and responsible deployment \citep{bansal2026,carneiro2025,pardo2026}. These concerns are important, but they do not exhaust the substantive organization of the field. A satisfactory account must also distinguish the major research problem areas in which AI is being developed and applied.
+
+We address that task through a publication-centred relational design. A screened publication anchor is narrowed, using a rule-defined, outcome-blind high-specificity title/abstract restriction, to an analytic corpus $P$ of AI-and-mental-health publications. Grants ($G$) are retained only when a grant identifier is recorded on a publication in $P$. Policy documents ($D$) are retained only when their recorded publication identifiers include a publication in $P$. Author-affiliation institutions ($PI$), grant funders ($GI$), and policy issuers ($DI$) are attached through the corresponding Dimensions.ai record fields. The resulting raw two-mode relations are $P$--$PI$, $P$--$G$, $G$--$GI$, $P$--$D$, and $D$--$DI$.
+
+The study maps $P$ into four stable publication themes: mental-health risk prediction, digital mental-health care and ethics, social and affective detection, and neuropsychiatric assessment. Ethics and computation are treated as cross-cutting concerns within this thematic structure, rather than as exhaustive or mutually exclusive publication classes. We then examine how theme membership is associated with a publication's recorded funding-support linkage and policy-document coverage linkage, how the corresponding relations co-occur locally, and how author affiliations, funders, and policy issuers are represented at institutional and country levels.
+
+The study asks four questions. First, can a transparently defined high-specificity publication corpus be represented by a small, stable, and interpretable thematic partition? Second, are the four themes differentially represented among publications with recorded funding-support and policy-document coverage linkages? Third, how are publication affiliations, grant funders, and policy issuers represented across themes and countries? Fourth, do recorded funding-support and policy-document coverage relations co-occur locally on the same publications more often than expected conditional on publication year? A policy-document relation is not equivalent to policy impact, endorsement, topical similarity, or demonstrated use.
+
+\section{Literature Review}
+
+\subsection{AI in Mental Health is a Heterogeneous Field}
+
+Artificial intelligence (AI) is increasingly being applied in mental health care to address persistent challenges such as limited access, stigma, and resource constraints. Its applications span diagnosis, prediction, intervention, and monitoring, encompassing tools such as chatbots, machine-learning models, and digital platforms that support early detection, personalized treatment, and real-time symptom tracking \citep{beg2025,raygozal2025,saputra2026}. The field is characterized by a broad range of approaches and rapidly expanding research activity, including developments in natural-language processing, multimodal data analysis, and predictive analytics \citep{pardo2026,elsayary2026,jin2023}.
+
+These advances are accompanied by important concerns about data privacy, algorithmic bias, and the potential dehumanization of care \citep{bansal2026,raygozal2025}. Such concerns motivate regulatory frameworks and interdisciplinary collaboration aimed at equitable and responsible implementation \citep{beg2025,mikaeili2025,riva2025}. The development and use of AI in mental health thus brings computational, clinical, ethical, and social considerations into the same broad research field \citep{maidment2026,carneiro2025,pardo2026}.
+
+\subsection{Ethics and Computation as Cross-Cutting Concerns}
+
+The literature distinguishes research concerned with model performance, prediction, validation, and measurable computational performance from research concerned with fairness, transparency, accountability, privacy, and responsibility \citep{mller2017,muoz2008}. These concerns may coexist within individual publications rather than form mutually exclusive document classes. Accordingly, this study does not infer researchers' intentions or impose ethics and computation as fixed thematic categories. Instead, it examines their place within a broader publication-text thematic structure.
+
+This approach is intentionally cautious. It treats ethics and computation as cross-cutting features of a heterogeneous research field, while using a reproducible thematic partition to identify the major substantive problem areas represented in the corpus. Thematic composition can then be related to recorded institutional relations without treating vocabulary alone as a comprehensive representation of research orientation \citep{wouters2006,mller2017}.
+
+\subsection{Research Funding and the Organization of Research Activity}
+
+Research funding can shape research agendas, prioritize areas of inquiry, and influence which topics, methods, and questions receive sustained support \citep{laudel2014,franssen2018}. Strategic initiatives may encourage work on particular societal needs or emerging fields, while competitive schemes can affect the conditions under which research is conducted \citep{kayyali2025,cartier2018,schweiger2024}. Funding systems are therefore relevant institutional settings for studying the recorded association between publication themes and linked grant records.
+
+However, record-level grant links should not be read as direct evidence that a funder selected a publication's theme. Grant start dates frequently precede publication dates, and the present data do not identify decision processes, proposal evaluations, or the full causal sequence from funding to publication. The appropriate empirical question is associational: which publication themes are differentially represented among publications with a Dimensions.ai-recorded funding-support linkage?
+
+\subsection{Policy Documents, Research Links, and Institutional Context}
+
+The relationship between research and policy is nonlinear, selective, and context dependent \citep{almeida2006,ritman2014}. Knowledge-translation scholarship emphasizes the synthesis, communication, and application of research, while also recognizing that policy organizations work through administrative, legal, and political considerations \citep{lauck2023,jaca2023,oelke2015}. Policy documents may cite or otherwise link to research for many reasons, and a recorded relation does not by itself indicate uptake, endorsement, influence, or topical affinity.
+
+For that reason, we treat policy documents in Dimensions.ai as heterogeneous records that are connected to publications through recorded \texttt{publication\_ids}. Their issuer attributes provide a descriptive institutional annotation of those records. The analysis asks whether a publication has a recorded policy-document coverage linkage after a sufficient observation window; it does not assess the content, effect, or quality of the linked policy documents.
+
+\subsection{A Publication-Centred Relational Perspective}
+
+Scientific publications, grants, and policy records are often studied separately. A relational perspective instead begins with observed links between these entities \citep{nag2013,gutirrezsnchez2025,almeida2006}. In the present design, publications are the common mode. The raw two-mode relations are publication--author affiliation ($P$--$PI$), publication--grant ($P$--$G$), grant--funder ($G$--$GI$), publication--policy document ($P$--$D$), and policy document--issuer ($D$--$DI$).
+
+This perspective makes it possible to study how funding-support and policy-document coverage relations intersect locally through the same publications. It does not presume a linear chain from research to funding to policy. Instead, it asks whether the observed co-location of $P$--$G$ and $P$--$D$ relations differs from an explicit null expectation that preserves year-conditioned opportunity.
+
+\subsection{Computational and Relational Methods}
+
+Computational research mapping can combine reproducible publication-text representation with record-level relational analysis. Large datasets can be used to identify stable thematic structure, assess assignment uncertainty, and examine association patterns while retaining uncertainty and model assumptions \citep{khurana2023,zhang2025,rashid2019}. Where records contain explicit cross-entity identifiers, two-mode network descriptions and permutation methods can assess the intersection of relation types without treating heterogeneous documents as directly comparable text collections \citep{kortum2021,jose2025}.
+
+The present study follows this strategy. Its computational approach uses literal publication screening, a high-specificity analytic subset, a four-component publication-text model with assignment-margin diagnostics, robust logistic regression, systematic institutional and country aggregation, and a publication-year-stratified permutation null for local relation alignment. These methods retain the distinction between thematic publication structure and recorded institutional relations, while avoiding inferences about policy influence or institutional decision-making that the available record relations cannot establish.
+
+\section{Methods}
+
+\subsection{Design and research questions}
+
+The study used a publication-centred, linked-record design. The first stage constructed a broad screened anchor $P_0$; the second stage defined the high-specificity analytic publication corpus $P\subset P_0$; and the third stage attached grant, policy-document, author-affiliation, funder, and issuer records through Dimensions.ai identifiers and attributes. All publication cleaning, text representation, thematic modelling, component selection, and thematic naming used publication information only. Grant, policy-document, institution, country, citation, and linkage outcomes were not used to construct themes.
+
+\subsection{Data source and publication construction}
+
+Dimensions.ai was the data source. Candidate article and review publications from 2000--2025 were retrieved with a no-wildcard query combining explicit AI/ML phrases (\emph{artificial intelligence}, \emph{machine learning}, \emph{deep learning}, \emph{neural network}, \emph{large language model}, or \emph{LLM}) and core mental-health phrases (\emph{mental health}, \emph{mental illness}, \emph{psychiatry}, \emph{psychiatric}, \emph{psychotherapy}, \emph{psychotherapeutic}, \emph{mental disorder}, or \emph{psychiatric disorder}). The query returned 13,574 candidates.
+
+Each candidate then underwent a deterministic local screen. A record was retained in $P_0$ only if its title or available abstract contained at least one explicit AI/ML phrase and at least one explicit core mental-health phrase. This stage was adopted because case checks showed that a query may return records related to, rather than visibly containing, the intended terms. It yielded 11,102 retained publications; 10,766 (97.0\%) had abstracts, while 336 title-qualified publications lacked abstracts. The saved audit reproduced all 11,102 retain and 2,472 exclude decisions with zero mismatches.
+
+The analytic corpus $P$ was a rule-defined, outcome-blind high-specificity subset of $P_0$. It retained records with an available abstract containing an explicit core mental-health phrase and an explicit AI/ML phrase other than \emph{neural network} alone. The restriction was specified from publication text alone to address the broad and sometimes non-specific use of \emph{neural network} in scientific text; no grant, policy-document, institutional, country, citation, or linkage result was used to define it. It produced 7,146 publications (64.4\% of $P_0$). The full $P_0$ construction is retained as a provenance record; all thematic analyses below use $P$.
+
+\subsection{Four-theme publication-text partition}
+
+Titles and available abstracts in $P$ were combined and represented with a deterministic term-frequency--inverse-document-frequency matrix. Generic anchor terms and standard stopwords were removed, while substantive clinical, methodological, and application vocabulary was retained. Nonnegative matrix factorization (NMF) solutions with two, three, and four components were estimated with fixed preprocessing and repeated perturbation checks. The four-component solution was selected because all components were sizeable (20.2--36.7\% of hard assignments), stable under the diagnostic resampling procedure, and interpretable from their ranked terms and fixed high-membership and typical-record packets.
+
+A publication received a hard theme assignment from its largest normalized NMF component weight. The complete four-weight vector was retained. Assignment margin was defined as the largest minus the second-largest component weight; margins below .10 and .20 were flagged as boundary-ambiguity sensitivities rather than reassigned. Component labels were assigned using a documented protocol: ranked component terms were read together with fixed high-membership and typical-record packets, and each label was written as an operational description with explicit inclusions and exclusions. This protocol was completed without reference to institutional or linkage outcomes. The resulting operational labels were: \emph{mental-health risk prediction}; \emph{digital mental-health care and ethics}; \emph{social and affective detection}; and \emph{neuropsychiatric assessment}. The supplementary materials report the evidence packets, label protocol, and assignment-margin distribution. These labels do not claim that the components are objectively discovered or naturally bounded research domains.
+
+\subsection{Recorded relations and institution-country aggregation}
+
+A $P$--$PI$ relation joined a publication to each recorded author-affiliation institution. Country representation was obtained from its recorded affiliation countries. A $P$--$G$ funding-support linkage joined a publication to a grant in its \texttt{supporting\_grant\_ids}; the reverse view is the grant-supported publication linkage of a grant. A $G$--$GI$ relation joined each linked grant to its recorded funding organization and country. A $P$--$D$ policy-document coverage linkage joined a publication to each retained policy document whose \texttt{publication\_ids} included the publication ID; the reverse view is the publication coverage of a policy document. A $D$--$DI$ relation joined a policy document to its recorded issuing organization and issuer country.
+
+Institution and country results are descriptive. A grant or policy document can contribute to more than one theme when it is linked to publications assigned to different themes. Country representation counts are nonexclusive and are not rates, country-normalized shares, or measures of institutional capacity.
+
+\subsection{Theme-based association models}
+
+The outcomes were (i) at least one recorded $P$--$G$ funding-support linkage and (ii) at least one recorded $P$--$D$ policy-document coverage linkage. Logistic regressions used HC3-robust standard errors and adjusted for centred publication year and $\log(1+\text{times cited})$. Digital mental-health care and ethics was the reference theme. The main policy-document coverage analysis was limited to publications through 2021, allowing coverage to be observed through the 2025 data endpoint. A through-2020 analysis provided a longer-window robustness check. Because policy-document coverage was rare, we additionally estimated a Firth penalized logistic model, a citation-omitted model, and a cubic-spline publication-year model for the primary through-2021 sample. We report convergence, theme-specific event counts, predictor correlations, and variance-inflation diagnostics in the Supplementary Materials. The policy estimates are associative and the low event count is reported prominently.
+
+All models were repeated after excluding publications whose hard assignment margins were below .10 and .20. These analyses assess whether the principal thematic contrasts depend on records near component boundaries. They do not validate the thematic model independently.
+
+\subsection{Local configuration alignment}
+
+For each publication, the $P$--$G$ and $P$--$D$ degrees defined four local configurations: funding-support only, policy-document coverage only, both, or neither. The primary null fixed all $P$--$G$ ties and reassigned complete $P$--$D$ incidence profiles one-to-one within publication-year strata. It therefore preserved the within-year policy-document coverage-degree profile, policy-document endpoints, and policy issuer attributes. Across 10,000 permutations, we compared the observed number of publications with both relations (extensive-margin alignment) and the sum of publication-level $P$--$G$ degree times $P$--$D$ degree (intensive-margin alignment) with the publication-year-conditioned null distribution. Empirical one- and two-sided $p$ values used the plus-one correction; singleton publication-year strata remained fixed. The test concerns alignment of recorded relations, not causal pathways.
+
+\section{Results}
+
+\subsection{Thematic corpus and assignment clarity}
+
+The high-specificity analytic corpus contained 7,146 publications. The four hard-assignment themes were digital mental-health care and ethics ($n=2,621$, 36.7\%), mental-health risk prediction ($n=1,603$, 22.4\%), neuropsychiatric assessment ($n=1,477$, 20.7\%), and social and affective detection ($n=1,445$, 20.2\%). The average largest component weight ranged from .65 to .72 across themes. Overall, 5,288 publications (74.0\%) had a largest-versus-second-largest component margin of at least .20; 980 (13.7\%) had a margin below .10. Figure~\ref{fig:theme-composition} reports theme sizes and the assignment-margin distribution.
+
+\maybefigure{htbp}{figures/figure_2_four_theme_composition.pdf}{\label{fig:theme-composition}Hard assignment to the four publication-text themes in the high-specificity analytic corpus ($n=7,146$). The inset or companion panel reports assignment-margin categories. A hard assignment uses the largest normalized NMF component weight; the full four-component weight vector is retained for sensitivity analysis.}
+
+\subsection{Funding-support linkage by theme}
+
+Funding-support linkage was recorded for 1,394 publications (19.5\% of $P$), representing 4,308 $P$--$G$ ties and 3,022 grants. The unadjusted funding-support shares were 33.8\% for neuropsychiatric assessment, 30.3\% for mental-health risk prediction, 11.1\% for social and affective detection, and 9.5\% for digital mental-health care and ethics.
+
+In the adjusted model, compared with digital mental-health care and ethics, mental-health risk prediction had higher odds of a recorded funding-support linkage (adjusted odds ratio [OR] 4.13, 95\% confidence interval [CI] 3.45--4.94, $p<.001$), as did neuropsychiatric assessment (OR 4.45, 95\% CI 3.71--5.35, $p<.001$). Social and affective detection did not differ reliably from the reference theme (OR 1.17, 95\% CI .94--1.45, $p=.160$). The two stronger contrasts persisted after excluding low-margin assignments.
+
+\subsection{Policy-document coverage by theme}
+
+Across all years, 161 publications (2.3\% of $P$) had at least one policy-document coverage linkage, comprising 293 $P$--$D$ ties to 214 policy documents. The primary publication-age-eligible analysis, restricted to publications through 2021, included 1,398 publications and 111 coverage events. The corresponding coverage shares were 10.8\% for digital mental-health care and ethics, 9.0\% for mental-health risk prediction, 7.7\% for social and affective detection, and 5.4\% for neuropsychiatric assessment.
+
+Relative to digital mental-health care and ethics, neuropsychiatric assessment had lower adjusted odds of policy-document coverage (OR .37, 95\% CI .20--.68, $p=.001$), as did social and affective detection (OR .49, 95\% CI .25--.94, $p=.032$). Mental-health risk prediction did not differ reliably (OR .87, 95\% CI .49--1.54, $p=.626$). The neuropsychiatric contrast persisted in the through-2020 longer-window, citation-omitted, spline-year, and Firth specifications. The social/affective contrast persisted in the Firth and spline-year specifications but was not precise in the citation-omitted or through-2020 analyses. All policy models converged; no theme had zero events or only events, and the primary model had 111 coverage events across 1,398 publications. Figure~\ref{fig:theme-associations} shows primary and boundary-ambiguity sensitivity estimates; full robustness diagnostics are in the Supplementary Materials.
+
+\maybefigure{htbp}{figures/figure_3_four_theme_associations.pdf}{\label{fig:theme-associations}Adjusted associations of four publication-text themes with recorded funding-support and policy-document coverage linkages. Digital mental-health care and ethics is the reference theme. Points show adjusted odds ratios and bars show 95\% confidence intervals. Policy-document coverage models use publications through 2021; the through-2020 result and hard-assignment margin sensitivities are reported in the Supplementary Materials.}
+
+\subsection{Institutional and country landscapes}
+
+The $P$--$PI$ author-affiliation relations linked 5,528 publications (77.4\% of $P$) to 4,894 institutions through 16,669 distinct publication-affiliation ties; 5,717 publications (80.0\%) had recorded affiliation countries, spanning 126 countries. Affiliation coverage varied by theme, from 67.1\% of digital mental-health care and ethics publications to 90.7\% of neuropsychiatric assessment publications. These differences are record-coverage characteristics rather than substantive estimates of national or institutional participation.
+
+The $P$--$G$ funding-support system linked 1,394 publications to 3,022 grants. All retained grants had a recorded $G$--$GI$ funder association, producing 138 funding institutions and 33 funder countries. The $P$--$D$ policy-document coverage system linked 161 publications to 214 policy documents. Each of those policy documents had a recorded $D$--$DI$ issuer association, producing 49 issuing institutions and 18 issuer countries. Theme-specific $G$--$GI$ and $D$--$DI$ representations are paths through publications in a theme; the same grant or policy document can therefore occur in more than one thematic view.
+
+Table~\ref{tab:landscape} reports the scale of all six record and institution/country aggregations. Figure~\ref{fig:country-landscapes} provides a normalized descriptive comparison of the leading countries represented in author affiliations, grant funders, and policy issuers. These are nonexclusive representations, not country-adjusted shares or measures of institutional capacity.
+
+\begin{table}[htbp]
+\centering
+\caption{Recorded institution and country relations in the high-specificity thematic corpus.}
+\label{tab:landscape}
+\small
+\begin{tabular}{p{0.34\linewidth}p{0.21\linewidth}p{0.28\linewidth}}
+\toprule
+Relation & Source records & Target entities \\
+\midrule
+$P$--$PI$ author affiliations & 5,528 publications & 4,894 institutions; 126 countries \\
+$P$--$G$ funding-support & 1,394 publications & 3,022 grants \\
+$G$--$GI$ grant funders & 3,022 grants & 138 institutions; 33 countries \\
+$P$--$D$ policy-document coverage & 161 publications & 214 policy documents \\
+$D$--$DI$ policy issuers & 214 policy documents & 49 institutions; 18 countries \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\maybefigure{htbp}{figures/figure_4_four_theme_country_landscapes.pdf}{\label{fig:country-landscapes}Country representation across the four publication themes. Panels distinguish publication author-affiliation countries ($P$--$PI$), grant-funder countries ($G$--$GI$, through $P$--$G$), and policy-issuer countries ($D$--$DI$, through $P$--$D$). Representations are nonexclusive descriptive counts normalized within each relation-theme panel.}
+
+\subsection{Local alignment of funding-support and policy-document coverage}
+
+In $P$, 80 publications had both a funding-support and a policy-document coverage linkage. Under the 10,000-permutation publication-year-stratified null, the mean expected count was 50.95 (95\% interval 41--62), yielding an extensive-margin enrichment of 1.57 and a two-sided permutation $p=.0002$. The intensive degree-product statistic was 596, compared with a null mean of 284.66 (95\% interval 167--480), an enrichment of 2.09 and a two-sided $p=.011$. Thus, the relations co-occurred on more publications than expected, and their degrees were more strongly concentrated on the same publications than under the year-conditioned null. This result indicates local alignment in the recorded relations; it does not establish a directional path from funding to policy documents or the reverse.
+
+The jointly connected publications were distributed across all four themes: 33 mental-health risk prediction, 20 digital mental-health care and ethics, 16 neuropsychiatric assessment, and 11 social and affective detection. Figure~\ref{fig:local-alignment} displays the configurations and the null comparison.
+
+\maybefigure{htbp}{figures/figure_5_four_theme_local_alignment.pdf}{\label{fig:local-alignment}Local alignment of recorded funding-support and policy-document coverage relations in the high-specificity thematic corpus. The configuration panel is stratified by hard-assignment theme. The null panels compare the observed extensive and intensive alignment statistics with 10,000 publication-year-stratified permutations that retain $P$--$G$ ties and complete $P$--$D$ incidence profiles.}
+
+\section{Discussion}
+
+The redesigned analysis shows that the high-specificity AI-and-mental-health corpus is not adequately represented by a sparse ethics-versus-performance dichotomy. A four-theme publication-text partition retains a large linked record system and identifies differentiated associations with recorded funding-support and policy-document coverage relations. Mental-health risk prediction and neuropsychiatric assessment were much more likely than digital mental-health care and ethics to have a recorded funding-support linkage. In contrast, digital mental-health care and ethics had comparatively greater policy-document coverage than neuropsychiatric assessment and social and affective detection in the publication-age-eligible analysis.
+
+These findings should not be read as evidence that funders prefer a theme or that policy issuers promote one. A grant relation can predate its linked publication, and a policy-document relation may reflect citation, background reference, or another form of database-recorded connection. The results instead describe different relational signatures around publication themes. The local permutation result adds that funding-support and policy-document coverage relations co-locate on some publications more often than expected under the publication-year-conditioned null. It does not transform the recorded relations into causal pathways.
+
+The institutional and country results add a descriptive layer that was absent from a publication-only comparison. Publication author affiliations, grant funders, and policy issuers occupy different record roles and have different coverage. The three institution/country aggregations should therefore not be collapsed into a single institutional ranking. They provide context for where thematic publication activity is affiliated, which funders are recorded on linked grants, and which organizations issue linked policy documents. Future work may examine the corresponding projected institutional networks, provided that the entity-resolution choices and relation-specific denominators are made explicit.
+
+Ethics and computation remain relevant to the study title and field context, but they are not treated as complete themes. Ethical, professional, and care-oriented concerns are prominent within the digital mental-health care and ethics component and can arise elsewhere; computational methods similarly occur across all components. This distinction avoids inferring the organization of a heterogeneous corpus from the presence or absence of a small number of phrases.
+
+\section{Limitations}
+
+The analysis depends on Dimensions.ai coverage, metadata quality, record identifiers, and organization fields. The high-specificity analytic corpus is deliberately narrower than the screened anchor and may exclude relevant studies that use different terminology or lack an abstract. Conversely, literal matching and automated text representation cannot eliminate all false-positive or peripheral records. NMF components are model-based textual representations; their hard assignments simplify mixed publications. We therefore retain component weights and report assignment-margin sensitivities, but these do not independently validate theme names.
+
+Policy-document coverage is rare and database-recorded. The primary eligible sample has 111 covered publications; its estimates require caution, and lack of a recorded policy-document relation is not evidence of no real-world policy use. Country and institution counts are nonexclusive descriptive representations, are not population-adjusted, and may reflect uneven indexing and entity resolution. Finally, the association and permutation analyses do not identify causal effects, funding decisions, institutional intentions, policy endorsement, or policy impact.
+
+\section{Conclusion}
+
+A transparently defined high-specificity publication corpus supports a stable four-theme representation of AI-and-mental-health research and retains sufficient grant and policy-document connections for relational analysis. Themes show different recorded funding-support and policy-document coverage patterns. Author affiliations, funders, and policy issuers provide a systematic institutional and country context. Local alignment of funding-support and policy-document coverage exceeds that expected under the publication-year-conditioned null. These findings map thematic and institutional relations in the database; they do not demonstrate causal institutional selection or policy impact.
+
+\section*{Supplementary Materials}
+
+The Supplementary Materials provide the candidate-retrieval specification, screening audit, high-specificity subset rule, and NMF preprocessing settings. They also report the two-, three-, and four-component diagnostics; ranked terms and fixed component evidence packets; hard-assignment and margin summaries; full model coefficients; Firth, citation-omitted, and spline-year policy sensitivities with diagnostics; institution/country representations; and 10,000-permutation outputs.
+
+\section*{Data Availability}
+
+Reproducibility materials are publicly available at:
+
+\noindent\href{https://github.com/mboudour/ai-mental-health-institutional-linkages-reproducibility}{\texttt{https://github.com/mboudour/ai-mental-health-}}\\
+\href{https://github.com/mboudour/ai-mental-health-institutional-linkages-reproducibility}{\texttt{institutional-linkages-reproducibility}}
+
+\noindent The repository contains the candidate-publication retrieval specification, screening rules and audit summaries, NMF and relation-construction code, aggregate outputs, and reconstruction instructions for authorized Dimensions users. Raw Dimensions.ai records are not redistributed in accordance with the applicable data-use agreement.
+
+\section*{Conflict of Interest}
+The authors declare no conflict of interest.
+
+\section*{Author Contributions}
+M.B. conceived the study, conducted the computational analysis, and drafted the manuscript. N.M. contributed to the conceptual development, literature review, and revision of the manuscript. Both authors approved the final version.
+
+\section*{Acknowledgments}
+The authors thank colleagues who provided comments on earlier versions of the manuscript.
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

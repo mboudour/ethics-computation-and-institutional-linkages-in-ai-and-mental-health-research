@@ -1,0 +1,46 @@
+theme,relation,n_source_records,n_target_entities,n_unique_ties,source_coverage_pct
+All high-specificity publications,P publications,7146,,,100.0
+All high-specificity publications,P-PI author-affiliation institutions,5528,4894,16669,77.35796249650154
+All high-specificity publications,P-country author-affiliation countries,5717,126,8615,80.00279876854184
+All high-specificity publications,G-GI funder institutions via P-G,3022,138,3022,100.0
+All high-specificity publications,G-country funder countries via P-G,3022,33,3022,100.0
+All high-specificity publications,D-DI policy-issuer institutions via P-D,214,49,214,100.0
+All high-specificity publications,D-country policy-issuer countries via P-D,214,18,214,100.0
+All high-specificity publications,P-G funding-support linkage,1394,3022,4308,19.50741673663588
+All high-specificity publications,P-D policy-document coverage linkage,161,214,293,2.2530086761824797
+Mental-health risk prediction,P publications,1603,,,100.0
+Mental-health risk prediction,P-PI author-affiliation institutions,1417,2346,5237,88.3967560823456
+Mental-health risk prediction,P-country author-affiliation countries,1443,94,2341,90.0187149095446
+Mental-health risk prediction,G-GI funder institutions via P-G,999,98,999,100.0
+Mental-health risk prediction,G-country funder countries via P-G,999,24,999,100.0
+Mental-health risk prediction,D-DI policy-issuer institutions via P-D,75,20,75,100.0
+Mental-health risk prediction,D-country policy-issuer countries via P-D,75,10,75,100.0
+Mental-health risk prediction,P-G funding-support linkage,485,999,1343,30.25577043044292
+Mental-health risk prediction,P-D policy-document coverage linkage,45,75,88,2.8072364316905802
+Digital mental-health care and ethics,P publications,2621,,,100.0
+Digital mental-health care and ethics,P-PI author-affiliation institutions,1758,2161,4373,67.07363601678749
+Digital mental-health care and ethics,P-country author-affiliation countries,1857,105,2624,70.85082029759634
+Digital mental-health care and ethics,G-GI funder institutions via P-G,490,81,490,100.0
+Digital mental-health care and ethics,G-country funder countries via P-G,490,24,490,100.0
+Digital mental-health care and ethics,D-DI policy-issuer institutions via P-D,101,34,101,100.0
+Digital mental-health care and ethics,D-country policy-issuer countries via P-D,101,15,101,100.0
+Digital mental-health care and ethics,P-G funding-support linkage,249,490,565,9.50019076688287
+Digital mental-health care and ethics,P-D policy-document coverage linkage,68,101,125,2.594429607020221
+Social and affective detection,P publications,1445,,,100.0
+Social and affective detection,P-PI author-affiliation institutions,1014,1362,2167,70.17301038062284
+Social and affective detection,P-country author-affiliation countries,1060,85,1478,73.35640138408304
+Social and affective detection,G-GI funder institutions via P-G,277,64,277,100.0
+Social and affective detection,G-country funder countries via P-G,277,21,277,100.0
+Social and affective detection,D-DI policy-issuer institutions via P-D,36,15,36,100.0
+Social and affective detection,D-country policy-issuer countries via P-D,36,11,36,100.0
+Social and affective detection,P-G funding-support linkage,161,277,317,11.141868512110726
+Social and affective detection,P-D policy-document coverage linkage,21,36,48,1.453287197231834
+Neuropsychiatric assessment,P publications,1477,,,100.0
+Neuropsychiatric assessment,P-PI author-affiliation institutions,1339,1937,4892,90.6567366283006
+Neuropsychiatric assessment,P-country author-affiliation countries,1357,83,2172,91.875423155044
+Neuropsychiatric assessment,G-GI funder institutions via P-G,1491,100,1491,100.0
+Neuropsychiatric assessment,G-country funder countries via P-G,1491,29,1491,100.0
+Neuropsychiatric assessment,D-DI policy-issuer institutions via P-D,21,9,21,100.0
+Neuropsychiatric assessment,D-country policy-issuer countries via P-D,21,8,21,100.0
+Neuropsychiatric assessment,P-G funding-support linkage,499,1491,2083,33.78469871360867
+Neuropsychiatric assessment,P-D policy-document coverage linkage,27,21,32,1.8280297901150981

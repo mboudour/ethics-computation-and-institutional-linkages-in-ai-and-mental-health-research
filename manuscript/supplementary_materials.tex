@@ -1,408 +1,499 @@
 \documentclass[11pt]{article}
-\usepackage[margin=1in]{geometry}
-\usepackage{booktabs,longtable,array}
-\usepackage[T1]{fontenc}
+
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath}
-\usepackage{caption}
-\setlength{\LTleft}{0pt}
-\setlength{\LTright}{0pt}
+
+\usepackage[T1]{fontenc}
+
+\usepackage[margin=0.8in]{geometry}
+
+\usepackage{booktabs,longtable,array}
+
+\usepackage{microtype}
+
+\microtypesetup{expansion=false}
+
+\setlength{\LTpre}{0.4em}
+
+\setlength{\LTpost}{0.4em}
+
 \begin{document}
+
 \begin{center}
-{\Large Supplementary Materials}\\[0.5em]
+
+{\Large Supplementary Materials}\\[0.35em]
+
 {\large Ethics, Computation, and Institutional Linkages in AI and Mental-Health Research}
+
 \end{center}
 
-\section*{Supplementary Methods}
-The primary association models are binomial logistic regressions with HC3 robust standard errors. Their covariates are the two primary publication-language indicators, four non-exclusive supplementary topic-family descriptors, centered publication year, and $\log(1+\text{times cited})$. Policy-linkage models are restricted to publications through 2021 for the primary eligibility analysis and through 2020 for the more restrictive robustness analysis. The complete-case analyses retain records with an available abstract. Citation-omitted and flexible-year specifications are sensitivity analyses that estimate different conditional associations from the primary model. Flexible year is represented by a cubic B-spline with four degrees of freedom.
+\section*{S1. Analytic corpus and thematic construction}
 
-Firth penalized-logistic models repeat the primary linear-year, citation-adjusted policy specifications. The Firth estimates use inverse expected Fisher information and model-based Wald intervals; they are a rare-outcome sensitivity and do not replace the HC3-robust primary estimates. For the cross-relation alignment test, each permutation is a one-to-one reassignment of complete $P$--$D$ incidence profiles within publication-year strata. Every profile is used once per permutation, strata with one publication remain fixed, and $P$--$G$ ties, policy-document endpoints, and issuer attributions are retained. The random seed is 20260902; two-sided empirical $p$ values use the plus-one correction described in the main text.
+The broad screened publication anchor contained 11,102 records. The high-specificity analytic corpus retained publications with an available abstract containing a core mental-health phrase and an explicit AI/ML phrase other than \emph{neural network} alone. The final thematic corpus contained 7,146 publications. Text modelling used deterministic TF--IDF preprocessing of titles and abstracts. Two-, three-, and four-component NMF solutions were compared before the four-component solution was selected. Grant, policy-document, institution, country, citation, and linkage information were not used to construct the text model or choose the number of components.
 
-\section*{Supplementary Results}
-\begin{longtable}{p{4.0cm}p{4.0cm}rrrr}
-\caption{Full adjusted association models.}\label{tab:s1-full-models}\\
+\begin{longtable}{@{}p{0.5\linewidth}@{\hspace{0.4em}}p{0.4\linewidth}@{}}
+\caption{High-specificity analytic-corpus construction.}\label{tab:S1}\\
 \toprule
-Model & Term & Log odds & Robust SE & OR (95\% CI) & $p$ \\
+Item & Value \\
 \midrule
 \endfirsthead
-\multicolumn{6}{l}{\small\itshape Continued from previous page} \\
+\multicolumn{2}{l}{\small\itshape Continued from previous page}\\
 \toprule
-Model & Term & Log odds & Robust SE & OR (95\% CI) & $p$ \\
+Item & Value \\
 \midrule
 \endhead
-\midrule
-\multicolumn{6}{r}{\small\itshape Continued on next page} \\
-\endfoot
 \bottomrule
-\endlastfoot
-Grant linkage: primary & Intercept & -2.885 & 0.059 & 0.06 (0.05--0.06) & $<.001$ \\
-Grant linkage: primary & Ethics/responsibility indicator & -0.305 & 0.074 & 0.74 (0.64--0.85) & $<.001$ \\
-Grant linkage: primary & Computational-performance indicator & 0.407 & 0.073 & 1.50 (1.30--1.73) & $<.001$ \\
-Grant linkage: primary & Conditions/symptoms & 0.302 & 0.056 & 1.35 (1.21--1.51) & $<.001$ \\
-Grant linkage: primary & Assessment/diagnosis & 0.051 & 0.065 & 1.05 (0.93--1.20) & .434 \\
-Grant linkage: primary & Treatment/intervention & 0.177 & 0.058 & 1.19 (1.07--1.34) & .002 \\
-Grant linkage: primary & Neurocognitive/affective & -0.038 & 0.064 & 0.96 (0.85--1.09) & .556 \\
-Grant linkage: primary & Publication year (centered) & -0.020 & 0.008 & 0.98 (0.97--1.00) & .012 \\
-Grant linkage: primary & Log(1 + citations) & 0.505 & 0.017 & 1.66 (1.60--1.71) & $<.001$ \\
-Policy linkage: through 2021 & Intercept & -7.101 & 0.442 & 0.00 (0.00--0.00) & $<.001$ \\
-Policy linkage: through 2021 & Ethics/responsibility indicator & 0.692 & 0.262 & 2.00 (1.20--3.33) & .008 \\
-Policy linkage: through 2021 & Computational-performance indicator & -0.307 & 0.295 & 0.74 (0.41--1.31) & .298 \\
-Policy linkage: through 2021 & Conditions/symptoms & 0.283 & 0.198 & 1.33 (0.90--1.96) & .152 \\
-Policy linkage: through 2021 & Assessment/diagnosis & 0.133 & 0.220 & 1.14 (0.74--1.76) & .545 \\
-Policy linkage: through 2021 & Treatment/intervention & 0.025 & 0.200 & 1.02 (0.69--1.52) & .902 \\
-Policy linkage: through 2021 & Neurocognitive/affective & -0.181 & 0.253 & 0.83 (0.51--1.37) & .474 \\
-Policy linkage: through 2021 & Publication year (centered) & 0.038 & 0.027 & 1.04 (0.99--1.09) & .154 \\
-Policy linkage: through 2021 & Log(1 + citations) & 1.117 & 0.088 & 3.05 (2.57--3.63) & $<.001$ \\
-Policy linkage: through 2020 & Intercept & -7.084 & 0.543 & 0.00 (0.00--0.00) & $<.001$ \\
-Policy linkage: through 2020 & Ethics/responsibility indicator & 0.981 & 0.308 & 2.67 (1.46--4.88) & .001 \\
-Policy linkage: through 2020 & Computational-performance indicator & -0.040 & 0.321 & 0.96 (0.51--1.80) & .902 \\
-Policy linkage: through 2020 & Conditions/symptoms & 0.648 & 0.228 & 1.91 (1.22--2.99) & .004 \\
-Policy linkage: through 2020 & Assessment/diagnosis & 0.057 & 0.258 & 1.06 (0.64--1.75) & .825 \\
-Policy linkage: through 2020 & Treatment/intervention & 0.064 & 0.225 & 1.07 (0.69--1.66) & .777 \\
-Policy linkage: through 2020 & Neurocognitive/affective & -0.398 & 0.307 & 0.67 (0.37--1.23) & .194 \\
-Policy linkage: through 2020 & Publication year (centered) & 0.079 & 0.035 & 1.08 (1.01--1.16) & .025 \\
-Policy linkage: through 2020 & Log(1 + citations) & 1.138 & 0.105 & 3.12 (2.54--3.83) & $<.001$ \\
+\endfoot
+Screened publication anchor $P_0$ & 11,102 publications \\
+Records with available abstracts & 10,676 publications \\
+High-specificity analytic corpus $P$ & 7,146 publications (64.4\% of $P_0$) \\
 \end{longtable}
 
-\noindent\small Note: Policy models have 147 events among 2,271 publications through 2021 and 120 events among 1,550 publications through 2020. OR = odds ratio; CI = confidence interval.
-
-\begin{longtable}{p{5.0cm}p{4.0cm}rr}
-\caption{Targeted sensitivity analyses for the focal indicators.}\label{tab:s2-focal-sensitivities}\\
+\begin{longtable}{@{}p{0.12\linewidth}@{\hspace{0.4em}}p{0.18\linewidth}@{\hspace{0.4em}}p{0.18\linewidth}@{\hspace{0.4em}}p{0.42\linewidth}@{}}
+\caption{Small-NMF solution diagnostics.}\label{tab:S2}\\
 \toprule
-Specification & Indicator & OR (95\% CI) & $p$ \\
+Components & Mean dominant weight & Share $\geq .60$ & Stability summary \\
 \midrule
 \endfirsthead
-\multicolumn{4}{l}{\small\itshape Continued from previous page} \\
+\multicolumn{4}{l}{\small\itshape Continued from previous page}\\
 \toprule
-Specification & Indicator & OR (95\% CI) & $p$ \\
+Components & Mean dominant weight & Share $\geq .60$ & Stability summary \\
 \midrule
 \endhead
-\midrule
-\multicolumn{4}{r}{\small\itshape Continued on next page} \\
-\endfoot
 \bottomrule
-\endlastfoot
-Grant linkage: primary & Ethics/responsibility indicator & 0.74 (0.64--0.85) & $<.001$ \\
-Grant linkage: primary & Computational-performance indicator & 1.50 (1.30--1.73) & $<.001$ \\
-Grant linkage: abstract available & Ethics/responsibility indicator & 0.73 (0.64--0.85) & $<.001$ \\
-Grant linkage: abstract available & Computational-performance indicator & 1.49 (1.30--1.72) & $<.001$ \\
-Grant linkage: no citation adjustment & Ethics/responsibility indicator & 0.78 (0.68--0.90) & $<.001$ \\
-Grant linkage: no citation adjustment & Computational-performance indicator & 1.56 (1.36--1.79) & $<.001$ \\
-Grant linkage: flexible year & Ethics/responsibility indicator & 0.78 (0.67--0.90) & $<.001$ \\
-Grant linkage: flexible year & Computational-performance indicator & 1.50 (1.30--1.73) & $<.001$ \\
-Grant linkage: start year $\leq$ publication year & Ethics/responsibility indicator & 0.74 (0.64--0.85) & $<.001$ \\
-Grant linkage: start year $\leq$ publication year & Computational-performance indicator & 1.50 (1.31--1.73) & $<.001$ \\
-Policy linkage: through 2021 & Ethics/responsibility indicator & 2.00 (1.20--3.33) & .008 \\
-Policy linkage: through 2021 & Computational-performance indicator & 0.74 (0.41--1.31) & .298 \\
-Policy linkage: through 2020 & Ethics/responsibility indicator & 2.67 (1.46--4.88) & .001 \\
-Policy linkage: through 2020 & Computational-performance indicator & 0.96 (0.51--1.80) & .902 \\
-Policy linkage: through 2021, abstract available & Ethics/responsibility indicator & 2.00 (1.20--3.34) & .008 \\
-Policy linkage: through 2021, abstract available & Computational-performance indicator & 0.73 (0.41--1.30) & .290 \\
-Policy linkage: through 2020, abstract available & Ethics/responsibility indicator & 2.68 (1.46--4.90) & .001 \\
-Policy linkage: through 2020, abstract available & Computational-performance indicator & 0.95 (0.51--1.79) & .886 \\
-Policy linkage: through 2021, no citations & Ethics/responsibility indicator & 2.34 (1.49--3.66) & $<.001$ \\
-Policy linkage: through 2021, no citations & Computational-performance indicator & 0.80 (0.47--1.37) & .423 \\
-Policy linkage: through 2020, no citations & Ethics/responsibility indicator & 2.97 (1.76--5.02) & $<.001$ \\
-Policy linkage: through 2020, no citations & Computational-performance indicator & 0.85 (0.47--1.53) & .592 \\
-Policy linkage: through 2021, flexible year & Ethics/responsibility indicator & 2.11 (1.26--3.54) & .005 \\
-Policy linkage: through 2021, flexible year & Computational-performance indicator & 0.77 (0.43--1.35) & .357 \\
-Policy linkage: through 2020, flexible year & Ethics/responsibility indicator & 2.76 (1.48--5.14) & .001 \\
-Policy linkage: through 2020, flexible year & Computational-performance indicator & 0.97 (0.52--1.80) & .913 \\
+\endfoot
+2.0 &  &  & 8 resamples; mean cosine 0.999; mean assignment agreement 0.991 \\
+3.0 &  &  & 8 resamples; mean cosine 0.998; mean assignment agreement 0.990 \\
+4.0 &  &  & 8 resamples; mean cosine 0.998; mean assignment agreement 0.986 \\
 \end{longtable}
 
-\begin{longtable}{p{4.5cm}p{4.0cm}rr}
-\caption{Firth penalized-logistic sensitivity results for policy-document linkage.}\label{tab:s3-firth}\\
+\section*{S2. Component evidence and hard assignment}
+
+\begin{longtable}{@{}p{0.18\linewidth}@{\hspace{0.4em}}p{0.72\linewidth}@{}}
+\caption{Ranked component terms used with fixed publication evidence packets to formulate the operational theme descriptions.}\label{tab:S3}\\
 \toprule
-Specification & Indicator & OR (95\% CI) & $p$ \\
+Component & Twelve highest-weighted terms \\
 \midrule
 \endfirsthead
-\multicolumn{4}{l}{\small\itshape Continued from previous page} \\
+\multicolumn{2}{l}{\small\itshape Continued from previous page}\\
 \toprule
-Specification & Indicator & OR (95\% CI) & $p$ \\
+Component & Twelve highest-weighted terms \\
 \midrule
 \endhead
-\midrule
-\multicolumn{4}{r}{\small\itshape Continued on next page} \\
-\endfoot
 \bottomrule
-\endlastfoot
-Policy linkage: through 2021, Firth & Ethics/responsibility indicator & 2.01 (1.21--3.35) & .007 \\
-Policy linkage: through 2021, Firth & Computational-performance indicator & 0.75 (0.43--1.30) & .306 \\
-Policy linkage: through 2020, Firth & Ethics/responsibility indicator & 2.67 (1.47--4.85) & .001 \\
-Policy linkage: through 2020, Firth & Computational-performance indicator & 0.98 (0.54--1.79) & .945 \\
+\endfoot
+Component 2 & risk, factors, depression, prediction, predicting, predictive, anxiety, predictors, regression, predict, 19, suicide \\
+Component 3 & ai, care, digital, ethical, challenges, technology, technologies, healthcare, human, potential, support, future \\
+Component 4 & detection, social media, media, emotion, deep, social, depression, recognition, accuracy, based, classification, proposed \\
+Component 5 & brain, disorder, psychiatric, disorders, schizophrenia, functional, clinical, diagnosis, biomarkers, mdd, psychiatric disorders, imaging \\
 \end{longtable}
 
-\begin{longtable}{p{5.1cm}rrrrrr}
-\caption{Model diagnostics for principal and policy sensitivity models.}\label{tab:s4-diagnostics}\\
+\begin{longtable}{@{}p{0.48\linewidth}@{\hspace{0.4em}}p{0.2\linewidth}@{\hspace{0.4em}}p{0.18\linewidth}@{}}
+\caption{Four-theme hard partition of the analytic corpus.}\label{tab:S4}\\
 \toprule
-Model & $n$ & Events & AIC & McFadden $R^2$ & Min. fitted $p$ & Max. fitted $p$ \\
+Hard-assignment theme & Publications & Share \\
 \midrule
 \endfirsthead
-\multicolumn{7}{l}{\small\itshape Continued from previous page} \\
+\multicolumn{3}{l}{\small\itshape Continued from previous page}\\
 \toprule
-Model & $n$ & Events & AIC & McFadden $R^2$ & Min. fitted $p$ & Max. fitted $p$ \\
+Hard-assignment theme & Publications & Share \\
 \midrule
 \endhead
-\midrule
-\multicolumn{7}{r}{\small\itshape Continued on next page} \\
-\endfoot
 \bottomrule
-\endlastfoot
-Grant linkage: primary & 11,102 & 1,974 & 9254.5 & 0.111 & 0.0366 & 0.8100 \\
-Policy linkage: through 2021 & 2,271 & 147 & 850.5 & 0.236 & 0.0003 & 0.8083 \\
-Policy linkage: through 2020 & 1,550 & 120 & 642.7 & 0.260 & 0.0001 & 0.8942 \\
-Policy linkage: through 2021, abstract available & 2,197 & 147 & 848.8 & 0.230 & 0.0003 & 0.8062 \\
-Policy linkage: through 2020, abstract available & 1,494 & 120 & 641.3 & 0.254 & 0.0001 & 0.8931 \\
-Policy linkage: through 2021, no citations & 2,271 & 147 & 1083.6 & 0.020 & 0.0292 & 0.1986 \\
-Policy linkage: through 2020, no citations & 1,550 & 120 & 824.9 & 0.042 & 0.0153 & 0.3105 \\
-Policy linkage: through 2021, flexible year & 2,271 & 147 & 845.4 & 0.246 & 0.0001 & 0.8397 \\
-Policy linkage: through 2020, flexible year & 1,550 & 120 & 639.1 & 0.272 & 0.0001 & 0.9316 \\
+\endfoot
+Risk prediction & 1,603 & 22.4\% \\
+Digital care and ethics & 2,621 & 36.7\% \\
+Social/affective detection & 1,445 & 20.2\% \\
+Neuropsychiatric assessment & 1,477 & 20.7\% \\
 \end{longtable}
 
-\noindent\small Note: All listed binomial GLM models converged. No perfect-separation or convergence warning was emitted. Fitted-probability extrema are screening diagnostics; they do not prove the absence of quasi-separation.
-
-\begin{longtable}{p{4.5cm}p{3.9cm}rrr}
-\caption{Standardized model-based probability contrasts for focal indicators.}\label{tab:s5-probability-contrasts}\\
+\begin{longtable}{@{}p{0.48\linewidth}@{\hspace{0.4em}}p{0.2\linewidth}@{\hspace{0.4em}}p{0.18\linewidth}@{}}
+\caption{Hard-assignment clarity.}\label{tab:S5}\\
 \toprule
-Model & Indicator & Indicator = 0 & Indicator = 1 & Difference \\
+Largest-minus-second-largest margin & Publications & Share \\
 \midrule
 \endfirsthead
-\multicolumn{5}{l}{\small\itshape Continued from previous page} \\
+\multicolumn{3}{l}{\small\itshape Continued from previous page}\\
 \toprule
-Model & Indicator & Indicator = 0 & Indicator = 1 & Difference \\
+Largest-minus-second-largest margin & Publications & Share \\
 \midrule
 \endhead
-\midrule
-\multicolumn{5}{r}{\small\itshape Continued on next page} \\
-\endfoot
 \bottomrule
-\endlastfoot
-Grant linkage: primary & Ethics/responsibility indicator & 18.5\% & 14.7\% & -3.8 pp \\
-Grant linkage: primary & Computational-performance indicator & 16.9\% & 22.6\% & +5.7 pp \\
-Policy linkage: through 2021 & Ethics/responsibility indicator & 6.0\% & 10.2\% & +4.2 pp \\
-Policy linkage: through 2021 & Computational-performance indicator & 6.7\% & 5.2\% & -1.5 pp \\
-Policy linkage: through 2020 & Ethics/responsibility indicator & 7.1\% & 14.2\% & +7.1 pp \\
-Policy linkage: through 2020 & Computational-performance indicator & 7.8\% & 7.5\% & -0.2 pp \\
+\endfoot
+Clear margin (at least .20) & 5,288 & 74.0\% \\
+High ambiguity (<.10) & 980 & 13.7\% \\
+Moderate ambiguity (.10 to <.20) & 878 & 12.3\% \\
 \end{longtable}
 
-\noindent\small Note: For each contrast, one focal indicator is set to 0 and then 1 for all publications while the remaining observed covariates are retained. These are model-based standardized contrasts, not causal effects.
+\section*{S3. Theme-based association models}
 
-\begin{longtable}{p{5.0cm}p{5.4cm}rr}
-\caption{Descriptive composition of the primary ethics/responsibility dictionary.}\label{tab:s6-ethics-composition}\\
+Digital mental-health care and ethics is the reference theme. All models use HC3-robust standard errors and adjust for centred publication year and $\log(1+\mathrm{times\ cited})$. Policy-document coverage models are restricted to the stated publication-year eligibility sample.
+
+\begin{longtable}{@{}p{0.3\linewidth}@{\hspace{0.4em}}p{0.25\linewidth}@{\hspace{0.4em}}p{0.1\linewidth}@{\hspace{0.4em}}p{0.2\linewidth}@{\hspace{0.4em}}p{0.08\linewidth}@{}}
+\caption{Theme-contrast coefficients from the adjusted funding-support and policy-document coverage models.}\label{tab:S6}\\
 \toprule
-Subfamily & Component terms & Publications & Share of $P$ \\
+Model & Term & OR & 95\% CI & $p$ \\
 \midrule
 \endfirsthead
-\multicolumn{4}{l}{\small\itshape Continued from previous page} \\
+\multicolumn{5}{l}{\small\itshape Continued from previous page}\\
 \toprule
-Subfamily & Component terms & Publications & Share of $P$ \\
+Model & Term & OR & 95\% CI & $p$ \\
 \midrule
 \endhead
-\midrule
-\multicolumn{4}{r}{\small\itshape Continued on next page} \\
-\endfoot
 \bottomrule
-\endlastfoot
-Ethics (general) & ethic* & 1,305 & 11.75\% \\
-Fairness and bias & algorithmic bias; bias mitigation; fairness & 215 & 1.94\% \\
-Explainability, interpretability, transparency, and accountability & accountab*; explainab*; interpretab*; transparen* & 989 & 8.91\% \\
-Privacy and consent & data privacy; informed consent; privacy-preserving & 370 & 3.33\% \\
-Responsibility, governance, and regulation & AI governance; AI regulation; algorithmic governance; algorithmic regulation; responsible AI; responsible artificial intelligence; trustworthy AI & 55 & 0.50\% \\
-Equity and rights & health equity; human rights & 48 & 0.43\% \\
+\endfoot
+Funding support & const & 0.03 & [0.03, 0.04] & 0.000 \\
+Funding support & Risk prediction & 4.13 & [3.45, 4.94] & 0.000 \\
+Funding support & Neuropsychiatric assessment & 4.45 & [3.71, 5.35] & 0.000 \\
+Funding support & Social/affective detection & 1.17 & [0.94, 1.45] & 0.160 \\
+Funding support & year\_centered & 0.99 & [0.96, 1.02] & 0.436 \\
+Funding support & log1p\_citations & 1.66 & [1.59, 1.74] & 0.000 \\
+Policy coverage, P through 2021 & const & 0.00 & [0.00, 0.00] & 0.000 \\
+Policy coverage, P through 2021 & Risk prediction & 0.87 & [0.49, 1.54] & 0.626 \\
+Policy coverage, P through 2021 & Neuropsychiatric assessment & 0.37 & [0.20, 0.68] & 0.001 \\
+Policy coverage, P through 2021 & Social/affective detection & 0.49 & [0.25, 0.94] & 0.032 \\
+Policy coverage, P through 2021 & year\_centered & 0.99 & [0.92, 1.06] & 0.802 \\
+Policy coverage, P through 2021 & log1p\_citations & 2.97 & [2.44, 3.62] & 0.000 \\
+Policy coverage, P through 2020 & const & 0.00 & [0.00, 0.01] & 0.000 \\
+Policy coverage, P through 2020 & Risk prediction & 0.92 & [0.47, 1.78] & 0.798 \\
+Policy coverage, P through 2020 & Neuropsychiatric assessment & 0.44 & [0.22, 0.87] & 0.018 \\
+Policy coverage, P through 2020 & Social/affective detection & 0.59 & [0.28, 1.25] & 0.172 \\
+Policy coverage, P through 2020 & year\_centered & 1.04 & [0.95, 1.13] & 0.374 \\
+Policy coverage, P through 2020 & log1p\_citations & 2.89 & [2.31, 3.62] & 0.000 \\
+Funding support; margin at least .10 & const & 0.03 & [0.03, 0.04] & 0.000 \\
+Funding support; margin at least .10 & Risk prediction & 4.85 & [3.98, 5.90] & 0.000 \\
+Funding support; margin at least .10 & Neuropsychiatric assessment & 5.38 & [4.41, 6.57] & 0.000 \\
+Funding support; margin at least .10 & Social/affective detection & 1.17 & [0.92, 1.49] & 0.188 \\
+Funding support; margin at least .10 & year\_centered & 1.00 & [0.97, 1.03] & 0.823 \\
+Funding support; margin at least .10 & log1p\_citations & 1.67 & [1.59, 1.75] & 0.000 \\
+Policy coverage, P through 2021; margin at least .10 & const & 0.00 & [0.00, 0.01] & 0.000 \\
+Policy coverage, P through 2021; margin at least .10 & Risk prediction & 0.84 & [0.45, 1.55] & 0.569 \\
+Policy coverage, P through 2021; margin at least .10 & Neuropsychiatric assessment & 0.33 & [0.17, 0.64] & 0.001 \\
+Policy coverage, P through 2021; margin at least .10 & Social/affective detection & 0.46 & [0.23, 0.93] & 0.032 \\
+Policy coverage, P through 2021; margin at least .10 & year\_centered & 0.99 & [0.92, 1.07] & 0.831 \\
+Policy coverage, P through 2021; margin at least .10 & log1p\_citations & 2.90 & [2.33, 3.62] & 0.000 \\
+Policy coverage, P through 2020; margin at least .10 & const & 0.00 & [0.00, 0.01] & 0.000 \\
+Policy coverage, P through 2020; margin at least .10 & Risk prediction & 0.89 & [0.43, 1.85] & 0.761 \\
+Policy coverage, P through 2020; margin at least .10 & Neuropsychiatric assessment & 0.41 & [0.20, 0.86] & 0.018 \\
+Policy coverage, P through 2020; margin at least .10 & Social/affective detection & 0.64 & [0.29, 1.42] & 0.274 \\
+Policy coverage, P through 2020; margin at least .10 & year\_centered & 1.05 & [0.96, 1.16] & 0.276 \\
+Policy coverage, P through 2020; margin at least .10 & log1p\_citations & 2.84 & [2.21, 3.66] & 0.000 \\
+Funding support; margin at least .20 & const & 0.03 & [0.02, 0.03] & 0.000 \\
+Funding support; margin at least .20 & Risk prediction & 5.50 & [4.44, 6.80] & 0.000 \\
+Funding support; margin at least .20 & Neuropsychiatric assessment & 6.18 & [4.99, 7.65] & 0.000 \\
+Funding support; margin at least .20 & Social/affective detection & 1.11 & [0.85, 1.45] & 0.464 \\
+Funding support; margin at least .20 & year\_centered & 1.01 & [0.98, 1.04] & 0.548 \\
+Funding support; margin at least .20 & log1p\_citations & 1.70 & [1.61, 1.80] & 0.000 \\
+Policy coverage, P through 2021; margin at least .20 & const & 0.00 & [0.00, 0.01] & 0.000 \\
+Policy coverage, P through 2021; margin at least .20 & Risk prediction & 0.82 & [0.43, 1.57] & 0.546 \\
+Policy coverage, P through 2021; margin at least .20 & Neuropsychiatric assessment & 0.28 & [0.14, 0.57] & 0.000 \\
+Policy coverage, P through 2021; margin at least .20 & Social/affective detection & 0.46 & [0.21, 1.00] & 0.051 \\
+Policy coverage, P through 2021; margin at least .20 & year\_centered & 1.01 & [0.93, 1.10] & 0.839 \\
+Policy coverage, P through 2021; margin at least .20 & log1p\_citations & 2.81 & [2.23, 3.55] & 0.000 \\
+Policy coverage, P through 2020; margin at least .20 & const & 0.00 & [0.00, 0.01] & 0.000 \\
+Policy coverage, P through 2020; margin at least .20 & Risk prediction & 0.94 & [0.43, 2.04] & 0.876 \\
+Policy coverage, P through 2020; margin at least .20 & Neuropsychiatric assessment & 0.37 & [0.17, 0.80] & 0.012 \\
+Policy coverage, P through 2020; margin at least .20 & Social/affective detection & 0.67 & [0.28, 1.59] & 0.365 \\
+Policy coverage, P through 2020; margin at least .20 & year\_centered & 1.08 & [0.98, 1.19] & 0.111 \\
+Policy coverage, P through 2020; margin at least .20 & log1p\_citations & 2.68 & [2.07, 3.47] & 0.000 \\
 \end{longtable}
 
-\noindent\small Note: Subfamilies are non-exclusive descriptive groupings. They were not entered as post-hoc association predictors.
-
-\begin{longtable}{rrr}
-\caption{Publication-level distribution of recorded grant-link counts.}\label{tab:s7-grant-degree}\\
+\begin{longtable}{@{}p{0.28\linewidth}@{\hspace{0.4em}}p{0.25\linewidth}@{\hspace{0.4em}}p{0.13\linewidth}@{\hspace{0.4em}}p{0.13\linewidth}@{\hspace{0.4em}}p{0.13\linewidth}@{}}
+\caption{Unadjusted recorded funding-support and policy-document coverage shares by hard-assignment theme.}\label{tab:S7}\\
 \toprule
-Recorded grant links & Publications & Share of all publications \\
+Analysis & Theme & Publications & Funding support & Policy coverage \\
 \midrule
 \endfirsthead
-\multicolumn{3}{l}{\small\itshape Continued from previous page} \\
+\multicolumn{5}{l}{\small\itshape Continued from previous page}\\
 \toprule
-Recorded grant links & Publications & Share of all publications \\
+Analysis & Theme & Publications & Funding support & Policy coverage \\
 \midrule
 \endhead
-\midrule
-\multicolumn{3}{r}{\small\itshape Continued on next page} \\
-\endfoot
 \bottomrule
-\endlastfoot
-0 & 9,128 & 82.22\% \\
-1 & 855 & 7.70\% \\
-2 & 437 & 3.94\% \\
-3 & 234 & 2.11\% \\
-4 & 142 & 1.28\% \\
-5 & 89 & 0.80\% \\
-6 & 66 & 0.59\% \\
-7 & 21 & 0.19\% \\
-8 & 25 & 0.23\% \\
-9 & 15 & 0.14\% \\
-10 & 16 & 0.14\% \\
-11 & 4 & 0.04\% \\
-12 & 13 & 0.12\% \\
-13 & 8 & 0.07\% \\
-14 & 4 & 0.04\% \\
-15 & 7 & 0.06\% \\
-16 & 2 & 0.02\% \\
-17 & 2 & 0.02\% \\
-18 & 1 & 0.01\% \\
-20 & 2 & 0.02\% \\
-21 & 4 & 0.04\% \\
-23 & 5 & 0.05\% \\
-24 & 5 & 0.05\% \\
-25 & 4 & 0.04\% \\
-26 & 2 & 0.02\% \\
-27 & 3 & 0.03\% \\
-28 & 2 & 0.02\% \\
-29 & 1 & 0.01\% \\
-32 & 1 & 0.01\% \\
-35 & 1 & 0.01\% \\
-39 & 1 & 0.01\% \\
-42 & 2 & 0.02\% \\
+\endfoot
+Funding support & Digital care and ethics & 2,621 & 9.5\% & 2.6\% \\
+Funding support & Risk prediction & 1,603 & 30.3\% & 2.8\% \\
+Funding support & Neuropsychiatric assessment & 1,477 & 33.8\% & 1.8\% \\
+Funding support & Social/affective detection & 1,445 & 11.1\% & 1.5\% \\
+Policy coverage, P through 2021 & Digital care and ethics & 314 & 20.7\% & 10.8\% \\
+Policy coverage, P through 2021 & Risk prediction & 377 & 37.9\% & 9.0\% \\
+Policy coverage, P through 2021 & Neuropsychiatric assessment & 485 & 46.2\% & 5.4\% \\
+Policy coverage, P through 2021 & Social/affective detection & 222 & 27.0\% & 7.7\% \\
+Policy coverage, P through 2020 & Digital care and ethics & 195 & 19.0\% & 12.8\% \\
+Policy coverage, P through 2020 & Risk prediction & 223 & 40.8\% & 11.7\% \\
+Policy coverage, P through 2020 & Neuropsychiatric assessment & 378 & 47.9\% & 6.6\% \\
+Policy coverage, P through 2020 & Social/affective detection & 137 & 31.4\% & 10.2\% \\
 \end{longtable}
 
-\begin{longtable}{p{4.6cm}p{3.3cm}rrrr}
-\caption{Highest-contributor deletion sensitivity for local alignment.}\label{tab:s8-hub-deletion}\\
+\subsection*{Policy-document coverage robustness}
+
+\begin{longtable}{@{}p{0.34\linewidth}@{\hspace{0.4em}}p{0.24\linewidth}@{\hspace{0.4em}}p{0.09\linewidth}@{\hspace{0.4em}}p{0.19\linewidth}@{\hspace{0.4em}}p{0.08\linewidth}@{}}
+\caption{Focal theme contrasts in rare-outcome and specification robustness checks for policy-document coverage through 2021. Reference theme: digital care and ethics.}\label{tab:S7a}\\
 \toprule
-Analysis & Statistic & Observed & Null mean & Enrichment & Two-sided $p$ \\
+Specification & Theme contrast & OR & 95\% CI & $p$ \\
 \midrule
 \endfirsthead
-\multicolumn{6}{l}{\small\itshape Continued from previous page} \\
+\multicolumn{5}{l}{\small\itshape Continued from previous page}\\
 \toprule
-Analysis & Statistic & Observed & Null mean & Enrichment & Two-sided $p$ \\
+Specification & Theme contrast & OR & 95\% CI & $p$ \\
 \midrule
 \endhead
-\midrule
-\multicolumn{6}{r}{\small\itshape Continued on next page} \\
-\endfoot
 \bottomrule
-\endlastfoot
-Full system & $N_{\mathrm{both}}$ & 98 & 61.805 & 1.586 & .002 \\
-Full system & $\sum_p d_{PG}(p)d_{PD}(p)$ & 696 & 318.128 & 2.188 & .004 \\
-Highest degree-product contributor removed & $N_{\mathrm{both}}$ & 97 & 61.052 & 1.589 & .002 \\
-Highest degree-product contributor removed & $\sum_p d_{PG}(p)d_{PD}(p)$ & 566 & 297.389 & 1.903 & .010 \\
+\endfoot
+HC3 logistic: linear year, citation adjusted & Risk prediction & 0.87 & [0.49, 1.54] & 0.626 \\
+HC3 logistic: linear year, citation adjusted & Neuropsychiatric assessment & 0.37 & [0.20, 0.68] & 0.001 \\
+HC3 logistic: linear year, citation adjusted & Social/affective detection & 0.49 & [0.25, 0.94] & 0.032 \\
+HC3 logistic: linear year, citation omitted & Risk prediction & 0.84 & [0.50, 1.39] & 0.492 \\
+HC3 logistic: linear year, citation omitted & Neuropsychiatric assessment & 0.44 & [0.26, 0.76] & 0.003 \\
+HC3 logistic: linear year, citation omitted & Social/affective detection & 0.68 & [0.37, 1.26] & 0.226 \\
+HC3 logistic: spline year, citation adjusted & Risk prediction & 0.86 & [0.49, 1.53] & 0.614 \\
+HC3 logistic: spline year, citation adjusted & Neuropsychiatric assessment & 0.35 & [0.19, 0.63] & 0.001 \\
+HC3 logistic: spline year, citation adjusted & Social/affective detection & 0.47 & [0.24, 0.91] & 0.026 \\
+Firth logistic: linear year, citation adjusted & Risk prediction & 0.87 & [0.49, 1.52] & 0.613 \\
+Firth logistic: linear year, citation adjusted & Neuropsychiatric assessment & 0.37 & [0.21, 0.67] & 0.001 \\
+Firth logistic: linear year, citation adjusted & Social/affective detection & 0.49 & [0.25, 0.97] & 0.039 \\
 \end{longtable}
 
-\noindent\small Note: The removed publication had $d_{PG}=10$, $d_{PD}=13$, and degree-product contribution 130. The publication identifier is retained in the machine-readable output but is not reported in the manuscript.
-
-\begin{longtable}{p{3.5cm}p{2.7cm}p{8.0cm}}
-\caption{Availability of publication-language metadata.}\label{tab:s9-language}\\
+\begin{longtable}{@{}p{0.33\linewidth}@{\hspace{0.4em}}p{0.12\linewidth}@{\hspace{0.4em}}p{0.1\linewidth}@{\hspace{0.4em}}p{0.14\linewidth}@{\hspace{0.4em}}p{0.12\linewidth}@{\hspace{0.4em}}p{0.18\linewidth}@{}}
+\caption{Diagnostics for policy-document coverage robustness models.}\label{tab:S7b}\\
 \toprule
-Metadata field & Status & Note \\
+Specification & Publications & Events & Events/parameter & Converged & All themes have event \\
 \midrule
 \endfirsthead
-\multicolumn{3}{l}{\small\itshape Continued from previous page} \\
+\multicolumn{6}{l}{\small\itshape Continued from previous page}\\
 \toprule
-Metadata field & Status & Note \\
+Specification & Publications & Events & Events/parameter & Converged & All themes have event \\
 \midrule
 \endhead
-\midrule
-\multicolumn{3}{r}{\small\itshape Continued on next page} \\
-\endfoot
 \bottomrule
-\endlastfoot
-language & not\_returned & No language metadata field was available in the publication file. \\
-language\_title & not\_returned & No language metadata field was available in the publication file. \\
+\endfoot
+HC3 logistic: linear year, citation adjusted & 1,398 & 111 & 18.5 & True & True \\
+HC3 logistic: linear year, citation omitted & 1,398 & 111 & 22.2 & True & True \\
+HC3 logistic: spline year, citation adjusted & 1,398 & 111 & 12.3 & True & True \\
+Firth logistic: linear year, citation adjusted & 1,398 & 111 & 18.5 & True & True \\
 \end{longtable}
 
-\noindent\small Note: The matching dictionaries are English-language dictionaries. Because language metadata were not returned in the publication file, the language composition of the anchor cannot be quantified.
+\section*{S4. Institutional and country representations}
 
-\begin{longtable}{p{5.2cm}p{4.0cm}r}
-\caption{Variance inflation factors for focal indicators in main models.}\label{tab:s10-vif}\\
+\begin{longtable}{@{}p{0.22\linewidth}@{\hspace{0.4em}}p{0.3\linewidth}@{\hspace{0.4em}}p{0.15\linewidth}@{\hspace{0.4em}}p{0.15\linewidth}@{\hspace{0.4em}}p{0.12\linewidth}@{}}
+\caption{Theme-specific institution and country representations. Relation labels indicate whether target entities are institutions or countries; counts are nonexclusive.}\label{tab:S8}\\
 \toprule
-Model & Indicator & VIF \\
+Relation & Theme & Source records & Target entities & Unique ties \\
 \midrule
 \endfirsthead
-\multicolumn{3}{l}{\small\itshape Continued from previous page} \\
+\multicolumn{5}{l}{\small\itshape Continued from previous page}\\
 \toprule
-Model & Indicator & VIF \\
+Relation & Theme & Source records & Target entities & Unique ties \\
 \midrule
 \endhead
-\midrule
-\multicolumn{3}{r}{\small\itshape Continued on next page} \\
-\endfoot
 \bottomrule
-\endlastfoot
-Grant linkage: primary & Computational-performance indicator & 1.044 \\
-Grant linkage: primary & Ethics/responsibility indicator & 1.044 \\
-Policy linkage: through 2021 & Computational-performance indicator & 1.056 \\
-Policy linkage: through 2021 & Ethics/responsibility indicator & 1.020 \\
-Policy linkage: through 2020 & Computational-performance indicator & 1.063 \\
-Policy linkage: through 2020 & Ethics/responsibility indicator & 1.017 \\
+\endfoot
+P publications & All high-specificity publications & 7,146 &  &  \\
+P-PI author-affiliation institutions & All high-specificity publications & 5,528 & 4,894 & 16,669 \\
+P-country author-affiliation countries & All high-specificity publications & 5,717 & 126 & 8,615 \\
+G-GI funder institutions via P-G & All high-specificity publications & 3,022 & 138 & 3,022 \\
+G-country funder countries via P-G & All high-specificity publications & 3,022 & 33 & 3,022 \\
+D-DI policy-issuer institutions via P-D & All high-specificity publications & 214 & 49 & 214 \\
+D-country policy-issuer countries via P-D & All high-specificity publications & 214 & 18 & 214 \\
+P-G funding-support linkage & All high-specificity publications & 1,394 & 3,022 & 4,308 \\
+P-D policy-document coverage linkage & All high-specificity publications & 161 & 214 & 293 \\
+P publications & Risk prediction & 1,603 &  &  \\
+P-PI author-affiliation institutions & Risk prediction & 1,417 & 2,346 & 5,237 \\
+P-country author-affiliation countries & Risk prediction & 1,443 & 94 & 2,341 \\
+G-GI funder institutions via P-G & Risk prediction & 999 & 98 & 999 \\
+G-country funder countries via P-G & Risk prediction & 999 & 24 & 999 \\
+D-DI policy-issuer institutions via P-D & Risk prediction & 75 & 20 & 75 \\
+D-country policy-issuer countries via P-D & Risk prediction & 75 & 10 & 75 \\
+P-G funding-support linkage & Risk prediction & 485 & 999 & 1,343 \\
+P-D policy-document coverage linkage & Risk prediction & 45 & 75 & 88 \\
+P publications & Digital care and ethics & 2,621 &  &  \\
+P-PI author-affiliation institutions & Digital care and ethics & 1,758 & 2,161 & 4,373 \\
+P-country author-affiliation countries & Digital care and ethics & 1,857 & 105 & 2,624 \\
+G-GI funder institutions via P-G & Digital care and ethics & 490 & 81 & 490 \\
+G-country funder countries via P-G & Digital care and ethics & 490 & 24 & 490 \\
+D-DI policy-issuer institutions via P-D & Digital care and ethics & 101 & 34 & 101 \\
+D-country policy-issuer countries via P-D & Digital care and ethics & 101 & 15 & 101 \\
+P-G funding-support linkage & Digital care and ethics & 249 & 490 & 565 \\
+P-D policy-document coverage linkage & Digital care and ethics & 68 & 101 & 125 \\
+P publications & Social/affective detection & 1,445 &  &  \\
+P-PI author-affiliation institutions & Social/affective detection & 1,014 & 1,362 & 2,167 \\
+P-country author-affiliation countries & Social/affective detection & 1,060 & 85 & 1,478 \\
+G-GI funder institutions via P-G & Social/affective detection & 277 & 64 & 277 \\
+G-country funder countries via P-G & Social/affective detection & 277 & 21 & 277 \\
+D-DI policy-issuer institutions via P-D & Social/affective detection & 36 & 15 & 36 \\
+D-country policy-issuer countries via P-D & Social/affective detection & 36 & 11 & 36 \\
+P-G funding-support linkage & Social/affective detection & 161 & 277 & 317 \\
+P-D policy-document coverage linkage & Social/affective detection & 21 & 36 & 48 \\
+P publications & Neuropsychiatric assessment & 1,477 &  &  \\
+P-PI author-affiliation institutions & Neuropsychiatric assessment & 1,339 & 1,937 & 4,892 \\
+P-country author-affiliation countries & Neuropsychiatric assessment & 1,357 & 83 & 2,172 \\
+G-GI funder institutions via P-G & Neuropsychiatric assessment & 1,491 & 100 & 1,491 \\
+G-country funder countries via P-G & Neuropsychiatric assessment & 1,491 & 29 & 1,491 \\
+D-DI policy-issuer institutions via P-D & Neuropsychiatric assessment & 21 & 9 & 21 \\
+D-country policy-issuer countries via P-D & Neuropsychiatric assessment & 21 & 8 & 21 \\
+P-G funding-support linkage & Neuropsychiatric assessment & 499 & 1,491 & 2,083 \\
+P-D policy-document coverage linkage & Neuropsychiatric assessment & 27 & 21 & 32 \\
 \end{longtable}
 
-\begin{longtable}{p{4.5cm}p{3.2cm}p{3.2cm}r}
-\caption{Largest absolute Pearson correlation among predictors in each principal model.}\label{tab:s11-correlations}\\
+\begin{longtable}{@{}p{0.2\linewidth}@{\hspace{0.4em}}p{0.24\linewidth}@{\hspace{0.4em}}p{0.1\linewidth}@{\hspace{0.4em}}p{0.13\linewidth}@{\hspace{0.4em}}p{0.13\linewidth}@{\hspace{0.4em}}p{0.1\linewidth}@{}}
+\caption{Descriptive concentration of theme-specific institution and country representations.}\label{tab:S9}\\
 \toprule
-Model & Predictor 1 & Predictor 2 & $|r|$ \\
+Relation & Theme & Entities & Top-one share & Top-five share & HHI \\
 \midrule
 \endfirsthead
-\multicolumn{4}{l}{\small\itshape Continued from previous page} \\
+\multicolumn{6}{l}{\small\itshape Continued from previous page}\\
 \toprule
-Model & Predictor 1 & Predictor 2 & $|r|$ \\
+Relation & Theme & Entities & Top-one share & Top-five share & HHI \\
 \midrule
 \endhead
-\midrule
-\multicolumn{4}{r}{\small\itshape Continued on next page} \\
-\endfoot
 \bottomrule
-\endlastfoot
-Grant linkage: primary & Publication year (centered) & Log(1 + citations) & 0.375 \\
-Policy linkage: through 2021 & Conditions/symptoms & Assessment/diagnosis & 0.183 \\
-Policy linkage: through 2020 & Conditions/symptoms & Assessment/diagnosis & 0.191 \\
+\endfoot
+P-PI author-affiliation institutions & All high-specificity publications & 4,894 & 1.2\% & 3.5\% & 0.001 \\
+P-PI author-affiliation institutions & Digital care and ethics & 2,161 & 1.5\% & 4.4\% & 0.001 \\
+P-PI author-affiliation institutions & Risk prediction & 2,346 & 1.4\% & 4.0\% & 0.001 \\
+P-PI author-affiliation institutions & Neuropsychiatric assessment & 1,937 & 1.0\% & 4.0\% & 0.002 \\
+P-PI author-affiliation institutions & Social/affective detection & 1,362 & 0.6\% & 2.6\% & 0.001 \\
+P-country author-affiliation countries & All high-specificity publications & 126 & 20.5\% & 48.7\% & 0.074 \\
+P-country author-affiliation countries & Digital care and ethics & 105 & 20.7\% & 48.7\% & 0.072 \\
+P-country author-affiliation countries & Risk prediction & 94 & 25.1\% & 50.7\% & 0.090 \\
+P-country author-affiliation countries & Neuropsychiatric assessment & 83 & 20.6\% & 52.1\% & 0.079 \\
+P-country author-affiliation countries & Social/affective detection & 85 & 15.7\% & 50.9\% & 0.071 \\
+G-GI funder institutions via P-G & All high-specificity publications & 138 & 17.9\% & 38.3\% & 0.052 \\
+G-GI funder institutions via P-G & Digital care and ethics & 81 & 16.9\% & 39.6\% & 0.051 \\
+G-GI funder institutions via P-G & Risk prediction & 98 & 17.1\% & 37.7\% & 0.052 \\
+G-GI funder institutions via P-G & Neuropsychiatric assessment & 100 & 20.5\% & 43.3\% & 0.064 \\
+G-GI funder institutions via P-G & Social/affective detection & 64 & 14.4\% & 44.4\% & 0.056 \\
+G-country funder countries via P-G & All high-specificity publications & 33 & 57.5\% & 83.0\% & 0.350 \\
+G-country funder countries via P-G & Digital care and ethics & 24 & 58.2\% & 85.9\% & 0.365 \\
+G-country funder countries via P-G & Risk prediction & 24 & 62.1\% & 86.3\% & 0.404 \\
+G-country funder countries via P-G & Neuropsychiatric assessment & 29 & 56.6\% & 80.3\% & 0.339 \\
+G-country funder countries via P-G & Social/affective detection & 21 & 48.4\% & 83.0\% & 0.273 \\
+D-DI policy-issuer institutions via P-D & All high-specificity publications & 49 & 19.2\% & 56.1\% & 0.083 \\
+D-DI policy-issuer institutions via P-D & Digital care and ethics & 34 & 25.7\% & 54.5\% & 0.097 \\
+D-DI policy-issuer institutions via P-D & Risk prediction & 20 & 21.3\% & 62.7\% & 0.103 \\
+D-DI policy-issuer institutions via P-D & Neuropsychiatric assessment & 9 & 33.3\% & 81.0\% & 0.197 \\
+D-DI policy-issuer institutions via P-D & Social/affective detection & 15 & 22.2\% & 69.4\% & 0.119 \\
+D-country policy-issuer countries via P-D & All high-specificity publications & 18 & 33.6\% & 78.5\% & 0.182 \\
+D-country policy-issuer countries via P-D & Digital care and ethics & 15 & 28.7\% & 70.3\% & 0.146 \\
+D-country policy-issuer countries via P-D & Risk prediction & 10 & 53.3\% & 86.7\% & 0.319 \\
+D-country policy-issuer countries via P-D & Neuropsychiatric assessment & 8 & 38.1\% & 85.7\% & 0.229 \\
+D-country policy-issuer countries via P-D & Social/affective detection & 11 & 22.2\% & 80.6\% & 0.147 \\
 \end{longtable}
 
-\begin{longtable}{p{5.0cm}rrr}
-\caption{Influence-screening diagnostics for principal models.}\label{tab:s12-influence}\\
+\begin{longtable}{@{}p{0.2\linewidth}@{\hspace{0.4em}}p{0.28\linewidth}@{\hspace{0.4em}}p{0.3\linewidth}@{\hspace{0.4em}}p{0.15\linewidth}@{}}
+\caption{Leading institution and country representations by relation and theme (first 48 ranked rows). Complete rankings are included in the reproducibility repository.}\label{tab:S10}\\
 \toprule
-Model & Maximum Cook's $D$ & Cases with $D>4/n$ & Maximum $|$DFBETA$|$ \\
+Relation & Theme & Institution/country & Represented source records \\
 \midrule
 \endfirsthead
-\multicolumn{4}{l}{\small\itshape Continued from previous page} \\
+\multicolumn{4}{l}{\small\itshape Continued from previous page}\\
 \toprule
-Model & Maximum Cook's $D$ & Cases with $D>4/n$ & Maximum $|$DFBETA$|$ \\
+Relation & Theme & Institution/country & Represented source records \\
 \midrule
 \endhead
-\midrule
-\multicolumn{4}{r}{\small\itshape Continued on next page} \\
-\endfoot
 \bottomrule
-\endlastfoot
-Grant linkage: primary & 0.0013 & 862 & 0.107 \\
-Policy linkage: through 2021 & 0.0259 & 155 & 0.428 \\
-Policy linkage: through 2020 & 0.0339 & 121 & 0.460 \\
+\endfoot
+P-PI author-affiliation institutions & All high-specificity publications & Harvard University & 194 \\
+P-PI author-affiliation institutions & All high-specificity publications & King's College London & 120 \\
+P-PI author-affiliation institutions & All high-specificity publications & University of Toronto & 103 \\
+P-PI author-affiliation institutions & All high-specificity publications & Stanford University & 92 \\
+P-PI author-affiliation institutions & All high-specificity publications & Massachusetts General Hospital & 79 \\
+P-PI author-affiliation institutions & All high-specificity publications & University of Pennsylvania & 73 \\
+P-PI author-affiliation institutions & All high-specificity publications & Yale University & 73 \\
+P-PI author-affiliation institutions & All high-specificity publications & University of Washington & 72 \\
+P-PI author-affiliation institutions & All high-specificity publications & University College London & 70 \\
+P-PI author-affiliation institutions & All high-specificity publications & University of Melbourne & 66 \\
+P-PI author-affiliation institutions & All high-specificity publications & University of Pittsburgh & 59 \\
+P-PI author-affiliation institutions & All high-specificity publications & University of Oxford & 58 \\
+P-PI author-affiliation institutions & All high-specificity publications & Columbia University & 56 \\
+P-PI author-affiliation institutions & All high-specificity publications & Imperial College London & 56 \\
+P-PI author-affiliation institutions & All high-specificity publications & University of California, Los Angeles & 56 \\
+P-PI author-affiliation institutions & All high-specificity publications & University of California, San Diego & 56 \\
+P-PI author-affiliation institutions & All high-specificity publications & Ludwig-Maximilians-Universität München & 55 \\
+P-PI author-affiliation institutions & All high-specificity publications & New York University & 52 \\
+P-PI author-affiliation institutions & All high-specificity publications & UNSW Sydney & 52 \\
+P-PI author-affiliation institutions & All high-specificity publications & Centre for Addiction and Mental Health & 49 \\
+P-PI author-affiliation institutions & All high-specificity publications & University of California, San Francisco & 47 \\
+P-PI author-affiliation institutions & All high-specificity publications & Deakin University & 46 \\
+P-PI author-affiliation institutions & All high-specificity publications & Johns Hopkins University & 46 \\
+P-PI author-affiliation institutions & All high-specificity publications & The University of Sydney & 45 \\
+P-PI author-affiliation institutions & All high-specificity publications & Northwestern University & 44 \\
+P-PI author-affiliation institutions & All high-specificity publications & University of Zurich & 44 \\
+P-PI author-affiliation institutions & All high-specificity publications & University of Michigan-Ann Arbor & 43 \\
+P-PI author-affiliation institutions & All high-specificity publications & Washington University in St. Louis & 43 \\
+P-PI author-affiliation institutions & All high-specificity publications & Icahn School of Medicine at Mount Sinai & 42 \\
+P-PI author-affiliation institutions & All high-specificity publications & University of Cambridge & 42 \\
+P-PI author-affiliation institutions & Digital care and ethics & Harvard University & 64 \\
+P-PI author-affiliation institutions & Digital care and ethics & University of Toronto & 36 \\
+P-PI author-affiliation institutions & Digital care and ethics & King's College London & 33 \\
+P-PI author-affiliation institutions & Digital care and ethics & University of Oxford & 33 \\
+P-PI author-affiliation institutions & Digital care and ethics & Stanford University & 27 \\
+P-PI author-affiliation institutions & Digital care and ethics & University of Melbourne & 26 \\
+P-PI author-affiliation institutions & Digital care and ethics & University of Washington & 23 \\
+P-PI author-affiliation institutions & Digital care and ethics & Imperial College London & 22 \\
+P-PI author-affiliation institutions & Digital care and ethics & Beth Israel Deaconess Medical Center & 21 \\
+P-PI author-affiliation institutions & Digital care and ethics & The University of Sydney & 20 \\
+P-PI author-affiliation institutions & Digital care and ethics & University College London & 20 \\
+P-PI author-affiliation institutions & Digital care and ethics & Centre for Addiction and Mental Health & 19 \\
+P-PI author-affiliation institutions & Digital care and ethics & New York University & 19 \\
+P-PI author-affiliation institutions & Digital care and ethics & University of Pennsylvania & 19 \\
+P-PI author-affiliation institutions & Digital care and ethics & Monash University & 18 \\
+P-PI author-affiliation institutions & Digital care and ethics & Bar-Ilan University & 17 \\
+P-PI author-affiliation institutions & Digital care and ethics & University of California, Los Angeles & 17 \\
+P-PI author-affiliation institutions & Digital care and ethics & Deakin University & 16 \\
 \end{longtable}
 
-\noindent\small Note: These values are influence-screening diagnostics rather than case-deletion effect estimates. The targeted highest-contributor deletion test for the network alignment statistic is reported separately in Supplementary Table~\ref{tab:s8-hub-deletion}.
+\section*{S5. Local relation alignment}
 
-\begin{longtable}{p{8.2cm}r}
-\caption{Record-level audit of the two-stage publication screen.}\label{tab:s13-screening-audit}\\
+\begin{longtable}{@{}p{0.45\linewidth}@{\hspace{0.4em}}p{0.3\linewidth}@{\hspace{0.4em}}p{0.15\linewidth}@{}}
+\caption{Funding-support and policy-document coverage configurations by hard-assignment theme.}\label{tab:S11}\\
 \toprule
-Audit quantity & Value \\
+Theme & Local configuration & Publications \\
 \midrule
 \endfirsthead
-\multicolumn{2}{l}{\small\itshape Continued from previous page} \\
+\multicolumn{3}{l}{\small\itshape Continued from previous page}\\
 \toprule
-Audit quantity & Value \\
+Theme & Local configuration & Publications \\
 \midrule
 \endhead
-\midrule
-\multicolumn{2}{r}{\small\itshape Continued on next page} \\
-\endfoot
 \bottomrule
-\endlastfoot
-Candidate publications returned by the Dimensions query & 13,574 \\
-Publications retained in the anchor & 11,102 \\
-Candidate publications excluded by the deterministic local screen & 2,472 \\
-Retention rate & 81.79\% \\
-Candidate records with an available abstract & 13,129 \\
-Candidate records without an abstract & 445 \\
-Saved decisions reproduced from the saved matched-term fields & Yes \\
-Rule-reproduction mismatches & 0 \\
+\endfoot
+Digital care and ethics & both & 20 \\
+Digital care and ethics & funding\_only & 229 \\
+Digital care and ethics & neither & 2,324 \\
+Digital care and ethics & policy\_only & 48 \\
+Risk prediction & both & 33 \\
+Risk prediction & funding\_only & 452 \\
+Risk prediction & neither & 1,106 \\
+Risk prediction & policy\_only & 12 \\
+Neuropsychiatric assessment & both & 16 \\
+Neuropsychiatric assessment & funding\_only & 483 \\
+Neuropsychiatric assessment & neither & 967 \\
+Neuropsychiatric assessment & policy\_only & 11 \\
+Social/affective detection & both & 11 \\
+Social/affective detection & funding\_only & 150 \\
+Social/affective detection & neither & 1,274 \\
+Social/affective detection & policy\_only & 10 \\
 \end{longtable}
 
-\noindent\small Note: The audit verifies whether the saved retain/exclude decisions follow the documented literal screen when reconstructed from the saved AI/ML and core-mental-health matched-term fields. It does not establish perfect recall of all relevant research.
+\begin{longtable}{@{}p{0.25\linewidth}@{\hspace{0.4em}}p{0.08\linewidth}@{\hspace{0.4em}}p{0.09\linewidth}@{\hspace{0.4em}}p{0.16\linewidth}@{\hspace{0.4em}}p{0.09\linewidth}@{\hspace{0.4em}}p{0.09\linewidth}@{}}
+\caption{Publication-year-stratified local-alignment permutation results (10,000 permutations).}\label{tab:S12}\\
+\toprule
+Statistic & Observed & Null mean & 95\% interval & Enrichment & $p$ \\
+\midrule
+\endfirsthead
+\multicolumn{6}{l}{\small\itshape Continued from previous page}\\
+\toprule
+Statistic & Observed & Null mean & 95\% interval & Enrichment & $p$ \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+N publications with both funding-support and policy-document coverage & 80 & 50.95 & [41.00, 62.00] & 1.57 & 0.000 \\
+Sum of publication funding-support degree × policy-coverage degree & 596 & 284.66 & [167.00, 480.00] & 2.09 & 0.011 \\
+\end{longtable}
+
+\section*{S6. Interpretive boundary}
+
+The hard partition is an operational summary of a continuous four-component NMF representation. The component weights and assignment-margin diagnostics are retained in the reproducibility materials. Institution and country counts are descriptive and nonexclusive. Grant and policy-document relations are database-recorded relations; they do not establish funding decisions, institutional intent, policy endorsement, policy influence, or policy impact.
 
 \end{document}
