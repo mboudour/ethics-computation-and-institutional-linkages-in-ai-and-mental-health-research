@@ -253,15 +253,15 @@ Firth logistic: linear year, citation adjusted & Neuropsychiatric assessment & 0
 Firth logistic: linear year, citation adjusted & Social/affective detection & 0.49 & [0.25, 0.97] & 0.039 \\
 \end{longtable}
 
-\begin{longtable}{@{}p{0.33\linewidth}@{\hspace{0.4em}}p{0.12\linewidth}@{\hspace{0.4em}}p{0.1\linewidth}@{\hspace{0.4em}}p{0.14\linewidth}@{\hspace{0.4em}}p{0.12\linewidth}@{\hspace{0.4em}}p{0.18\linewidth}@{}}
-\caption{Diagnostics for policy-document coverage robustness models.}\label{tab:S7b}\\
+\begin{longtable}{@{}p{0.31\linewidth}@{\hspace{0.4em}}p{0.07\linewidth}@{\hspace{0.4em}}p{0.08\linewidth}@{\hspace{0.4em}}p{0.08\linewidth}@{\hspace{0.4em}}p{0.1\linewidth}@{\hspace{0.4em}}p{0.16\linewidth}@{}}
+\caption{Diagnostics for policy-document coverage robustness models. EPV denotes events per model parameter.}\label{tab:S7b}\\
 \toprule
-Specification & Publications & Events & Events/parameter & Converged & All themes have event \\
+Specification & $N$ & Events & EPV & Converged & All themes >0 events \\
 \midrule
 \endfirsthead
 \multicolumn{6}{l}{\small\itshape Continued from previous page}\\
 \toprule
-Specification & Publications & Events & Events/parameter & Converged & All themes have event \\
+Specification & $N$ & Events & EPV & Converged & All themes >0 events \\
 \midrule
 \endhead
 \bottomrule
@@ -380,7 +380,7 @@ D-country policy-issuer countries via P-D & Social/affective detection & 11 & 22
 \end{longtable}
 
 \begin{longtable}{@{}p{0.2\linewidth}@{\hspace{0.4em}}p{0.28\linewidth}@{\hspace{0.4em}}p{0.3\linewidth}@{\hspace{0.4em}}p{0.15\linewidth}@{}}
-\caption{Leading institution and country representations by relation and theme (first 48 ranked rows). Complete rankings are included in the reproducibility repository.}\label{tab:S10}\\
+\caption{Five leading institution and country representations for every relation-theme combination. Counts are nonexclusive; complete rankings are included in the reproducibility repository.}\label{tab:S10}\\
 \toprule
 Relation & Theme & Institution/country & Represented source records \\
 \midrule
@@ -392,54 +392,156 @@ Relation & Theme & Institution/country & Represented source records \\
 \endhead
 \bottomrule
 \endfoot
+D-DI policy-issuer institutions via P-D & All high-specificity publications & World Health Organization & 41 \\
+D-DI policy-issuer institutions via P-D & All high-specificity publications & Centers for Disease Control and Prevention & 29 \\
+D-DI policy-issuer institutions via P-D & All high-specificity publications & Organisation For Economic Co-Operation and Development & 21 \\
+D-DI policy-issuer institutions via P-D & All high-specificity publications & Publications Office of the European Union & 18 \\
+D-DI policy-issuer institutions via P-D & All high-specificity publications & Canadian Agency for Drugs and Technologies in Health & 11 \\
+D-DI policy-issuer institutions via P-D & Digital care and ethics & World Health Organization & 26 \\
+D-DI policy-issuer institutions via P-D & Digital care and ethics & Canadian Agency for Drugs and Technologies in Health & 8 \\
+D-DI policy-issuer institutions via P-D & Digital care and ethics & Organisation For Economic Co-Operation and Development & 8 \\
+D-DI policy-issuer institutions via P-D & Digital care and ethics & Publications Office of the European Union & 8 \\
+D-DI policy-issuer institutions via P-D & Digital care and ethics & RAND Corporation & 5 \\
+D-DI policy-issuer institutions via P-D & Risk prediction & Centers for Disease Control and Prevention & 16 \\
+D-DI policy-issuer institutions via P-D & Risk prediction & National Bureau of Economic Research & 10 \\
+D-DI policy-issuer institutions via P-D & Risk prediction & World Health Organization & 9 \\
+D-DI policy-issuer institutions via P-D & Risk prediction & Organisation For Economic Co-Operation and Development & 6 \\
+D-DI policy-issuer institutions via P-D & Risk prediction & Publications Office of the European Union & 6 \\
+D-DI policy-issuer institutions via P-D & Neuropsychiatric assessment & Centers for Disease Control and Prevention & 7 \\
+D-DI policy-issuer institutions via P-D & Neuropsychiatric assessment & Canadian Agency for Drugs and Technologies in Health & 5 \\
+D-DI policy-issuer institutions via P-D & Neuropsychiatric assessment & Organisation For Economic Co-Operation and Development & 2 \\
+D-DI policy-issuer institutions via P-D & Neuropsychiatric assessment & Publications Office of the European Union & 2 \\
+D-DI policy-issuer institutions via P-D & Neuropsychiatric assessment & Australian Council of Learned Academies & 1 \\
+D-DI policy-issuer institutions via P-D & Social/affective detection & Organisation For Economic Co-Operation and Development & 8 \\
+D-DI policy-issuer institutions via P-D & Social/affective detection & World Health Organization & 6 \\
+D-DI policy-issuer institutions via P-D & Social/affective detection & Congress of Deputies & 4 \\
+D-DI policy-issuer institutions via P-D & Social/affective detection & Publications Office of the European Union & 4 \\
+D-DI policy-issuer institutions via P-D & Social/affective detection & Centers for Disease Control and Prevention & 3 \\
+D-country policy-issuer countries via P-D & All high-specificity publications & United States & 72 \\
+D-country policy-issuer countries via P-D & All high-specificity publications & Switzerland & 44 \\
+D-country policy-issuer countries via P-D & All high-specificity publications & France & 21 \\
+D-country policy-issuer countries via P-D & All high-specificity publications & Luxembourg & 18 \\
+D-country policy-issuer countries via P-D & All high-specificity publications & Canada & 13 \\
+D-country policy-issuer countries via P-D & Digital care and ethics & Switzerland & 29 \\
+D-country policy-issuer countries via P-D & Digital care and ethics & United States & 18 \\
+D-country policy-issuer countries via P-D & Digital care and ethics & Canada & 8 \\
+D-country policy-issuer countries via P-D & Digital care and ethics & France & 8 \\
+D-country policy-issuer countries via P-D & Digital care and ethics & Luxembourg & 8 \\
+D-country policy-issuer countries via P-D & Risk prediction & United States & 40 \\
+D-country policy-issuer countries via P-D & Risk prediction & Switzerland & 9 \\
+D-country policy-issuer countries via P-D & Risk prediction & France & 6 \\
+D-country policy-issuer countries via P-D & Risk prediction & Luxembourg & 6 \\
+D-country policy-issuer countries via P-D & Risk prediction & Canada & 4 \\
+D-country policy-issuer countries via P-D & Neuropsychiatric assessment & United States & 8 \\
+D-country policy-issuer countries via P-D & Neuropsychiatric assessment & Canada & 5 \\
+D-country policy-issuer countries via P-D & Neuropsychiatric assessment & France & 2 \\
+D-country policy-issuer countries via P-D & Neuropsychiatric assessment & Luxembourg & 2 \\
+D-country policy-issuer countries via P-D & Neuropsychiatric assessment & Australia & 1 \\
+D-country policy-issuer countries via P-D & Social/affective detection & France & 8 \\
+D-country policy-issuer countries via P-D & Social/affective detection & United States & 7 \\
+D-country policy-issuer countries via P-D & Social/affective detection & Switzerland & 6 \\
+D-country policy-issuer countries via P-D & Social/affective detection & Luxembourg & 4 \\
+D-country policy-issuer countries via P-D & Social/affective detection & Spain & 4 \\
+G-GI funder institutions via P-G & All high-specificity publications & National Institute of Mental Health & 542 \\
+G-GI funder institutions via P-G & All high-specificity publications & National Natural Science Foundation of China & 203 \\
+G-GI funder institutions via P-G & All high-specificity publications & Japan Society for the Promotion of Science & 149 \\
+G-GI funder institutions via P-G & All high-specificity publications & National Institute on Drug Abuse & 143 \\
+G-GI funder institutions via P-G & All high-specificity publications & National Institute on Aging & 120 \\
+G-GI funder institutions via P-G & Digital care and ethics & National Institute of Mental Health & 83 \\
+G-GI funder institutions via P-G & Digital care and ethics & European Commission & 37 \\
+G-GI funder institutions via P-G & Digital care and ethics & Directorate for Computer \& Information Science \& Engineering & 29 \\
+G-GI funder institutions via P-G & Digital care and ethics & National Cancer Institute & 27 \\
+G-GI funder institutions via P-G & Digital care and ethics & National Center for Advancing Translational Sciences & 18 \\
+G-GI funder institutions via P-G & Risk prediction & National Institute of Mental Health & 171 \\
+G-GI funder institutions via P-G & Risk prediction & National Institute on Drug Abuse & 74 \\
+G-GI funder institutions via P-G & Risk prediction & Japan Society for the Promotion of Science & 49 \\
+G-GI funder institutions via P-G & Risk prediction & National Institute on Aging & 42 \\
+G-GI funder institutions via P-G & Risk prediction & Medical Research Council & 41 \\
+G-GI funder institutions via P-G & Neuropsychiatric assessment & National Institute of Mental Health & 305 \\
+G-GI funder institutions via P-G & Neuropsychiatric assessment & National Natural Science Foundation of China & 115 \\
+G-GI funder institutions via P-G & Neuropsychiatric assessment & National Institute on Drug Abuse & 79 \\
+G-GI funder institutions via P-G & Neuropsychiatric assessment & Japan Society for the Promotion of Science & 76 \\
+G-GI funder institutions via P-G & Neuropsychiatric assessment & National Institute on Aging & 70 \\
+G-GI funder institutions via P-G & Social/affective detection & National Natural Science Foundation of China & 40 \\
+G-GI funder institutions via P-G & Social/affective detection & Directorate for Computer \& Information Science \& Engineering & 27 \\
+G-GI funder institutions via P-G & Social/affective detection & National Institute of Mental Health & 26 \\
+G-GI funder institutions via P-G & Social/affective detection & European Commission & 18 \\
+G-GI funder institutions via P-G & Social/affective detection & Japan Society for the Promotion of Science & 12 \\
+G-country funder countries via P-G & All high-specificity publications & United States & 1,738 \\
+G-country funder countries via P-G & All high-specificity publications & United Kingdom & 237 \\
+G-country funder countries via P-G & All high-specificity publications & China & 220 \\
+G-country funder countries via P-G & All high-specificity publications & Japan & 167 \\
+G-country funder countries via P-G & All high-specificity publications & Belgium & 146 \\
+G-country funder countries via P-G & Digital care and ethics & United States & 285 \\
+G-country funder countries via P-G & Digital care and ethics & United Kingdom & 63 \\
+G-country funder countries via P-G & Digital care and ethics & Belgium & 38 \\
+G-country funder countries via P-G & Digital care and ethics & Japan & 18 \\
+G-country funder countries via P-G & Digital care and ethics & Australia & 17 \\
+G-country funder countries via P-G & Risk prediction & United States & 620 \\
+G-country funder countries via P-G & Risk prediction & United Kingdom & 96 \\
+G-country funder countries via P-G & Risk prediction & Japan & 54 \\
+G-country funder countries via P-G & Risk prediction & China & 47 \\
+G-country funder countries via P-G & Risk prediction & Belgium & 45 \\
+G-country funder countries via P-G & Neuropsychiatric assessment & United States & 844 \\
+G-country funder countries via P-G & Neuropsychiatric assessment & China & 122 \\
+G-country funder countries via P-G & Neuropsychiatric assessment & Japan & 87 \\
+G-country funder countries via P-G & Neuropsychiatric assessment & United Kingdom & 84 \\
+G-country funder countries via P-G & Neuropsychiatric assessment & Belgium & 60 \\
+G-country funder countries via P-G & Social/affective detection & United States & 134 \\
+G-country funder countries via P-G & Social/affective detection & China & 41 \\
+G-country funder countries via P-G & Social/affective detection & United Kingdom & 23 \\
+G-country funder countries via P-G & Social/affective detection & Belgium & 20 \\
+G-country funder countries via P-G & Social/affective detection & Japan & 12 \\
 P-PI author-affiliation institutions & All high-specificity publications & Harvard University & 194 \\
 P-PI author-affiliation institutions & All high-specificity publications & King's College London & 120 \\
 P-PI author-affiliation institutions & All high-specificity publications & University of Toronto & 103 \\
 P-PI author-affiliation institutions & All high-specificity publications & Stanford University & 92 \\
 P-PI author-affiliation institutions & All high-specificity publications & Massachusetts General Hospital & 79 \\
-P-PI author-affiliation institutions & All high-specificity publications & University of Pennsylvania & 73 \\
-P-PI author-affiliation institutions & All high-specificity publications & Yale University & 73 \\
-P-PI author-affiliation institutions & All high-specificity publications & University of Washington & 72 \\
-P-PI author-affiliation institutions & All high-specificity publications & University College London & 70 \\
-P-PI author-affiliation institutions & All high-specificity publications & University of Melbourne & 66 \\
-P-PI author-affiliation institutions & All high-specificity publications & University of Pittsburgh & 59 \\
-P-PI author-affiliation institutions & All high-specificity publications & University of Oxford & 58 \\
-P-PI author-affiliation institutions & All high-specificity publications & Columbia University & 56 \\
-P-PI author-affiliation institutions & All high-specificity publications & Imperial College London & 56 \\
-P-PI author-affiliation institutions & All high-specificity publications & University of California, Los Angeles & 56 \\
-P-PI author-affiliation institutions & All high-specificity publications & University of California, San Diego & 56 \\
-P-PI author-affiliation institutions & All high-specificity publications & Ludwig-Maximilians-Universität München & 55 \\
-P-PI author-affiliation institutions & All high-specificity publications & New York University & 52 \\
-P-PI author-affiliation institutions & All high-specificity publications & UNSW Sydney & 52 \\
-P-PI author-affiliation institutions & All high-specificity publications & Centre for Addiction and Mental Health & 49 \\
-P-PI author-affiliation institutions & All high-specificity publications & University of California, San Francisco & 47 \\
-P-PI author-affiliation institutions & All high-specificity publications & Deakin University & 46 \\
-P-PI author-affiliation institutions & All high-specificity publications & Johns Hopkins University & 46 \\
-P-PI author-affiliation institutions & All high-specificity publications & The University of Sydney & 45 \\
-P-PI author-affiliation institutions & All high-specificity publications & Northwestern University & 44 \\
-P-PI author-affiliation institutions & All high-specificity publications & University of Zurich & 44 \\
-P-PI author-affiliation institutions & All high-specificity publications & University of Michigan-Ann Arbor & 43 \\
-P-PI author-affiliation institutions & All high-specificity publications & Washington University in St. Louis & 43 \\
-P-PI author-affiliation institutions & All high-specificity publications & Icahn School of Medicine at Mount Sinai & 42 \\
-P-PI author-affiliation institutions & All high-specificity publications & University of Cambridge & 42 \\
 P-PI author-affiliation institutions & Digital care and ethics & Harvard University & 64 \\
 P-PI author-affiliation institutions & Digital care and ethics & University of Toronto & 36 \\
 P-PI author-affiliation institutions & Digital care and ethics & King's College London & 33 \\
 P-PI author-affiliation institutions & Digital care and ethics & University of Oxford & 33 \\
 P-PI author-affiliation institutions & Digital care and ethics & Stanford University & 27 \\
-P-PI author-affiliation institutions & Digital care and ethics & University of Melbourne & 26 \\
-P-PI author-affiliation institutions & Digital care and ethics & University of Washington & 23 \\
-P-PI author-affiliation institutions & Digital care and ethics & Imperial College London & 22 \\
-P-PI author-affiliation institutions & Digital care and ethics & Beth Israel Deaconess Medical Center & 21 \\
-P-PI author-affiliation institutions & Digital care and ethics & The University of Sydney & 20 \\
-P-PI author-affiliation institutions & Digital care and ethics & University College London & 20 \\
-P-PI author-affiliation institutions & Digital care and ethics & Centre for Addiction and Mental Health & 19 \\
-P-PI author-affiliation institutions & Digital care and ethics & New York University & 19 \\
-P-PI author-affiliation institutions & Digital care and ethics & University of Pennsylvania & 19 \\
-P-PI author-affiliation institutions & Digital care and ethics & Monash University & 18 \\
-P-PI author-affiliation institutions & Digital care and ethics & Bar-Ilan University & 17 \\
-P-PI author-affiliation institutions & Digital care and ethics & University of California, Los Angeles & 17 \\
-P-PI author-affiliation institutions & Digital care and ethics & Deakin University & 16 \\
+P-PI author-affiliation institutions & Risk prediction & Harvard University & 71 \\
+P-PI author-affiliation institutions & Risk prediction & Massachusetts General Hospital & 35 \\
+P-PI author-affiliation institutions & Risk prediction & Stanford University & 34 \\
+P-PI author-affiliation institutions & Risk prediction & University of Washington & 34 \\
+P-PI author-affiliation institutions & Risk prediction & University of Toronto & 33 \\
+P-PI author-affiliation institutions & Neuropsychiatric assessment & King's College London & 49 \\
+P-PI author-affiliation institutions & Neuropsychiatric assessment & Harvard University & 47 \\
+P-PI author-affiliation institutions & Neuropsychiatric assessment & Ludwig-Maximilians-Universität München & 37 \\
+P-PI author-affiliation institutions & Neuropsychiatric assessment & Yale University & 33 \\
+P-PI author-affiliation institutions & Neuropsychiatric assessment & University of Pennsylvania & 31 \\
+P-PI author-affiliation institutions & Social/affective detection & King Saud University & 13 \\
+P-PI author-affiliation institutions & Social/affective detection & Harvard University & 12 \\
+P-PI author-affiliation institutions & Social/affective detection & Anna University, Chennai & 11 \\
+P-PI author-affiliation institutions & Social/affective detection & Georgia Institute of Technology & 11 \\
+P-PI author-affiliation institutions & Social/affective detection & SRM Institute of Science and Technology & 10 \\
+P-country author-affiliation countries & All high-specificity publications & United States & 1,768 \\
+P-country author-affiliation countries & All high-specificity publications & China & 988 \\
+P-country author-affiliation countries & All high-specificity publications & United Kingdom & 600 \\
+P-country author-affiliation countries & All high-specificity publications & India & 443 \\
+P-country author-affiliation countries & All high-specificity publications & Germany & 397 \\
+P-country author-affiliation countries & Digital care and ethics & United States & 543 \\
+P-country author-affiliation countries & Digital care and ethics & China & 237 \\
+P-country author-affiliation countries & Digital care and ethics & United Kingdom & 230 \\
+P-country author-affiliation countries & Digital care and ethics & Australia & 139 \\
+P-country author-affiliation countries & Digital care and ethics & India & 130 \\
+P-country author-affiliation countries & Risk prediction & United States & 587 \\
+P-country author-affiliation countries & Risk prediction & China & 253 \\
+P-country author-affiliation countries & Risk prediction & United Kingdom & 146 \\
+P-country author-affiliation countries & Risk prediction & Germany & 103 \\
+P-country author-affiliation countries & Risk prediction & Canada & 98 \\
+P-country author-affiliation countries & Neuropsychiatric assessment & United States & 448 \\
+P-country author-affiliation countries & Neuropsychiatric assessment & China & 266 \\
+P-country author-affiliation countries & Neuropsychiatric assessment & Germany & 155 \\
+P-country author-affiliation countries & Neuropsychiatric assessment & United Kingdom & 149 \\
+P-country author-affiliation countries & Neuropsychiatric assessment & Canada & 113 \\
+P-country author-affiliation countries & Social/affective detection & China & 232 \\
+P-country author-affiliation countries & Social/affective detection & India & 201 \\
+P-country author-affiliation countries & Social/affective detection & United States & 190 \\
+P-country author-affiliation countries & Social/affective detection & United Kingdom & 75 \\
+P-country author-affiliation countries & Social/affective detection & Australia & 54 \\
 \end{longtable}
 
 \section*{S5. Local relation alignment}
@@ -475,15 +577,15 @@ Social/affective detection & neither & 1,274 \\
 Social/affective detection & policy\_only & 10 \\
 \end{longtable}
 
-\begin{longtable}{@{}p{0.25\linewidth}@{\hspace{0.4em}}p{0.08\linewidth}@{\hspace{0.4em}}p{0.09\linewidth}@{\hspace{0.4em}}p{0.16\linewidth}@{\hspace{0.4em}}p{0.09\linewidth}@{\hspace{0.4em}}p{0.09\linewidth}@{}}
+\begin{longtable}{@{}p{0.25\linewidth}@{\hspace{0.4em}}p{0.07\linewidth}@{\hspace{0.4em}}p{0.09\linewidth}@{\hspace{0.4em}}p{0.16\linewidth}@{\hspace{0.4em}}p{0.08\linewidth}@{\hspace{0.4em}}p{0.08\linewidth}@{}}
 \caption{Publication-year-stratified local-alignment permutation results (10,000 permutations).}\label{tab:S12}\\
 \toprule
-Statistic & Observed & Null mean & 95\% interval & Enrichment & $p$ \\
+Statistic & Obs. & Null mean & 95\% interval & Enrich. & $p$ \\
 \midrule
 \endfirsthead
 \multicolumn{6}{l}{\small\itshape Continued from previous page}\\
 \toprule
-Statistic & Observed & Null mean & 95\% interval & Enrichment & $p$ \\
+Statistic & Obs. & Null mean & 95\% interval & Enrich. & $p$ \\
 \midrule
 \endhead
 \bottomrule

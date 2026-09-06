@@ -1,0 +1,3 @@
+network,unique_ties,left_mode_connected_nodes,right_mode_connected_nodes,connected_nodes_total,components,largest_component_nodes,largest_component_pct_connected_nodes,left_mode_mean_degree,right_mode_mean_degree,left_mode_max_degree,right_mode_max_degree
+P-G funding-support two-mode network,4308,1394,3022,4416,841,1056,23.91304347826087,3.09038737446198,1.4255459960291197,42,19
+P-D policy-document coverage two-mode network,293,161,214,375,97,52,13.866666666666667,1.8198757763975155,1.3691588785046729,19,19

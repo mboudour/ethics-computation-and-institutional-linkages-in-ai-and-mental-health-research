@@ -123,7 +123,7 @@ def main():
     drows=[]
     for _,r in policy_diag.iterrows():
         drows.append([tex(robust_labels.get(r['model'],r['model'])),f'{int(r["n_publications"]):,}',f'{int(r["n_events"]):,}',f'{float(r["events_per_parameter"]):.1f}',tex(r['converged']),tex(r['all_themes_have_event'])])
-    lines.append(longtable(['Specification','Publications','Events','Events/parameter','Converged','All themes have event'],drows,[.33,.12,.10,.14,.12,.18],'tab:S7b','Diagnostics for policy-document coverage robustness models.'))
+    lines.append(longtable(['Specification','$N$','Events','EPV','Converged','All themes >0 events'],drows,[.31,.07,.08,.08,.10,.16],'tab:S7b','Diagnostics for policy-document coverage robustness models. EPV denotes events per model parameter.'))
 
     lines.append(r'\section*{S4. Institutional and country representations}')
     land_rows=[]
@@ -138,8 +138,11 @@ def main():
         conc_rows.append([tex(r['relation']),tex(SHORT.get(r['theme'],r['theme'])),f'{int(r["n_target_entities"]):,}',f'{float(r["top_1_share_pct"]):.1f}\\%',f'{float(r["top_5_share_pct"]):.1f}\\%',fnum(r['hhi'],3)])
     lines.append(longtable(['Relation','Theme','Entities','Top-one share','Top-five share','HHI'],conc_rows,[.20,.24,.10,.13,.13,.10],'tab:S9','Descriptive concentration of theme-specific institution and country representations.'))
     top_rows=[]
-    for _,r in top.head(48).iterrows(): top_rows.append([tex(r['relation']),tex(SHORT.get(r['theme'],r['theme'])),tex(r['target_name']),f'{int(r["n_source_records"]):,}'])
-    lines.append(longtable(['Relation','Theme','Institution/country','Represented source records'],top_rows,[.20,.28,.30,.15],'tab:S10','Leading institution and country representations by relation and theme (first 48 ranked rows). Complete rankings are included in the reproducibility repository.'))
+    balanced_top=(top.sort_values(['relation','theme','n_source_records','target_name'],ascending=[True,True,False,True])
+                    .groupby(['relation','theme'],sort=False,as_index=False).head(5))
+    for _,r in balanced_top.iterrows():
+        top_rows.append([tex(r['relation']),tex(SHORT.get(r['theme'],r['theme'])),tex(r['target_name']),f'{int(r["n_source_records"]):,}'])
+    lines.append(longtable(['Relation','Theme','Institution/country','Represented source records'],top_rows,[.20,.28,.30,.15],'tab:S10','Five leading institution and country representations for every relation-theme combination. Counts are nonexclusive; complete rankings are included in the reproducibility repository.'))
 
     lines.append(r'\section*{S5. Local relation alignment}')
     cfg_rows=[]
@@ -147,7 +150,7 @@ def main():
     lines.append(longtable(['Theme','Local configuration','Publications'],cfg_rows,[.45,.30,.15],'tab:S11','Funding-support and policy-document coverage configurations by hard-assignment theme.'))
     null_rows=[]
     for _,r in null.iterrows(): null_rows.append([tex(r['statistic']),f'{float(r["observed"]):.0f}',fnum(r['null_mean']),f'[{fnum(r["null_2_5"])}, {fnum(r["null_97_5"])}]',fnum(r['enrichment']),fnum(r['two_sided_p'],3)])
-    lines.append(longtable(['Statistic','Observed','Null mean','95\\% interval','Enrichment','$p$'],null_rows,[.25,.08,.09,.16,.09,.09],'tab:S12','Publication-year-stratified local-alignment permutation results (10,000 permutations).'))
+    lines.append(longtable(['Statistic','Obs.','Null mean','95\\% interval','Enrich.','$p$'],null_rows,[.25,.07,.09,.16,.08,.08],'tab:S12','Publication-year-stratified local-alignment permutation results (10,000 permutations).'))
     lines += [r'\section*{S6. Interpretive boundary}', 'The hard partition is an operational summary of a continuous four-component NMF representation. The component weights and assignment-margin diagnostics are retained in the reproducibility materials. Institution and country counts are descriptive and nonexclusive. Grant and policy-document relations are database-recorded relations; they do not establish funding decisions, institutional intent, policy endorsement, policy influence, or policy impact.',r'\end{document}']
     OUT.write_text('\n\n'.join(lines)+'\n',encoding='utf-8')
     print('Wrote',OUT)

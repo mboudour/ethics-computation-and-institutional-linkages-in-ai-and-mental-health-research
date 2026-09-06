@@ -1,0 +1,3 @@
+relation,n_ties_with_valid_years,negative_n,zero_n,positive_n,median,q1,q3,minimum,maximum
+P-G: grant start year minus publication year,4308,4136,166,6,-4.0,-7.0,-2.0,-25.0,2.0
+P-D: policy-document year minus publication year,293,1,33,259,2.0,1.0,3.0,-1.0,10.0

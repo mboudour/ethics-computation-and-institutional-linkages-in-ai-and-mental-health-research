@@ -153,30 +153,43 @@ Relative to digital mental-health care and ethics, neuropsychiatric assessment h
 
 \maybefigure{htbp}{figures/figure_3_four_theme_associations.pdf}{\label{fig:theme-associations}Adjusted associations of four publication-text themes with recorded funding-support and policy-document coverage linkages. Digital mental-health care and ethics is the reference theme. Points show adjusted odds ratios and bars show 95\% confidence intervals. Policy-document coverage models use publications through 2021; the through-2020 result and hard-assignment margin sensitivities are reported in the Supplementary Materials.}
 
+\subsection{Record-year ordering}
+
+Record-year differences provide descriptive temporal context only; they do not identify a causal sequence. For the 4,308 $P$--$G$ ties, grant start years were usually earlier than publication years (4,136 negative differences; median $-4$ years; interquartile range $-7$ to $-2$). For the 293 $P$--$D$ ties, policy-document years were usually later than publication years (259 positive differences; median $+2$ years; interquartile range $+1$ to $+3$). The six positive $P$--$G$ differences and one negative $P$--$D$ difference show that these record dates cannot be interpreted as universal temporal ordering. They are metadata dates and do not demonstrate funding timing, policy uptake, knowledge translation, or any directional institutional process.
+
+\subsection{Two-mode network structure}
+
+The two recorded relations were fragmented rather than organized as a single connected system. The $P$--$G$ funding-support two-mode network contained 4,308 ties among 1,394 connected publications and 3,022 grants. It had 841 connected components; its largest component contained 1,056 nodes (23.9\% of connected nodes). The $P$--$D$ policy-document coverage two-mode network contained 293 ties among 161 connected publications and 214 policy documents. It had 97 components, and its largest component contained 52 nodes (13.9\% of connected nodes). These descriptions justify the local configuration analysis: they do not support a claim that the data form one cohesive global institutional network.
+
 \subsection{Institutional and country landscapes}
 
-The $P$--$PI$ author-affiliation relations linked 5,528 publications (77.4\% of $P$) to 4,894 institutions through 16,669 distinct publication-affiliation ties; 5,717 publications (80.0\%) had recorded affiliation countries, spanning 126 countries. Affiliation coverage varied by theme, from 67.1\% of digital mental-health care and ethics publications to 90.7\% of neuropsychiatric assessment publications. These differences are record-coverage characteristics rather than substantive estimates of national or institutional participation.
+The $P$--$PI$ author-affiliation relations linked 5,528 publications (77.4\% of $P$) to 4,894 institutions through 16,669 distinct publication-affiliation ties; 5,717 publications (80.0\%) had recorded affiliation countries, spanning 126 countries. The corresponding $G$--$GI$ relation covered 3,022 grants, 138 funder institutions, and 33 funder countries. The $D$--$DI$ relation covered 214 policy documents, 49 issuing institutions, and 18 issuer countries. Table~\ref{tab:landscape} reports these institution and country aggregations for the full corpus and for every theme.
 
-The $P$--$G$ funding-support system linked 1,394 publications to 3,022 grants. All retained grants had a recorded $G$--$GI$ funder association, producing 138 funding institutions and 33 funder countries. The $P$--$D$ policy-document coverage system linked 161 publications to 214 policy documents. Each of those policy documents had a recorded $D$--$DI$ issuer association, producing 49 issuing institutions and 18 issuer countries. Theme-specific $G$--$GI$ and $D$--$DI$ representations are paths through publications in a theme; the same grant or policy document can therefore occur in more than one thematic view.
+Harvard University led author-affiliation representation (194 $P$--$PI$ ties), and the United States led affiliation-country representation (1,768 ties). The National Institute of Mental Health led funder representation (542 $G$--$GI$ ties), while the United States led funder-country representation (1,738 ties). The World Health Organization led policy-issuer representation (41 $D$--$DI$ ties), while the United States led issuer-country representation (72 ties). These are recorded representations, not indicators of research capacity, funding volume, institutional influence, or policy impact.
 
-Table~\ref{tab:landscape} reports the scale of all six record and institution/country aggregations. Figure~\ref{fig:country-landscapes} provides a normalized descriptive comparison of the leading countries represented in author affiliations, grant funders, and policy issuers. These are nonexclusive representations, not country-adjusted shares or measures of institutional capacity.
+The three domains also differ descriptively in concentration. Author-affiliation institutions were diffuse: the leading institution accounted for 1.2\% of $P$--$PI$ ties and the leading five for 3.5\%. Funder countries were more concentrated: the leading country accounted for 57.5\% of $G$--$GI$ country ties. Issuer countries were intermediate, with 33.6\% of $D$--$DI$ country ties represented by the leading country. Theme-specific grant-funder and policy-issuer representations are paths through publications in a theme; the same grant or policy document can therefore contribute to more than one thematic view. Figure~\ref{fig:country-landscapes} provides a normalized comparison of country representations. All institution and country counts are nonexclusive descriptive aggregations.
 
 \begin{table}[htbp]
 \centering
-\caption{Recorded institution and country relations in the high-specificity thematic corpus.}
+\caption{Institution and country aggregations across the full thematic corpus and its four publication themes. Each entry is the number of distinct institutions, countries, grants, or policy documents represented in the indicated relation-theme view.}
 \label{tab:landscape}
-\small
-\begin{tabular}{p{0.34\linewidth}p{0.21\linewidth}p{0.28\linewidth}}
+\scriptsize
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrr}
 \toprule
-Relation & Source records & Target entities \\
+Relation or entity & All $P$ & \shortstack{Risk\\prediction} & \shortstack{Digital care\\ethics} & \shortstack{Social/affective\\detection} & \shortstack{Neuropsychiatric\\assessment} \\
 \midrule
-$P$--$PI$ author affiliations & 5,528 publications & 4,894 institutions; 126 countries \\
-$P$--$G$ funding-support & 1,394 publications & 3,022 grants \\
-$G$--$GI$ grant funders & 3,022 grants & 138 institutions; 33 countries \\
-$P$--$D$ policy-document coverage & 161 publications & 214 policy documents \\
-$D$--$DI$ policy issuers & 214 policy documents & 49 institutions; 18 countries \\
+$P$ publications & 7,146 & 1,603 & 2,621 & 1,445 & 1,477 \\
+$P$--$PI$ affiliation institutions & 4,894 & 2,346 & 2,161 & 1,362 & 1,937 \\
+$P$--$PI$ affiliation countries & 126 & 94 & 105 & 85 & 83 \\
+$G$ grants linked through $P$ & 3,022 & 999 & 490 & 277 & 1,491 \\
+$G$--$GI$ funder institutions & 138 & 98 & 81 & 64 & 100 \\
+$G$--$GI$ funder countries & 33 & 24 & 24 & 21 & 29 \\
+$D$ policy documents linked through $P$ & 214 & 75 & 101 & 36 & 21 \\
+$D$--$DI$ issuer institutions & 49 & 20 & 34 & 15 & 9 \\
+$D$--$DI$ issuer countries & 18 & 10 & 15 & 11 & 8 \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \end{table}
 
 \maybefigure{htbp}{figures/figure_4_four_theme_country_landscapes.pdf}{\label{fig:country-landscapes}Country representation across the four publication themes. Panels distinguish publication author-affiliation countries ($P$--$PI$), grant-funder countries ($G$--$GI$, through $P$--$G$), and policy-issuer countries ($D$--$DI$, through $P$--$D$). Representations are nonexclusive descriptive counts normalized within each relation-theme panel.}
@@ -203,11 +216,11 @@ Ethics and computation remain relevant to the study title and field context, but
 
 The analysis depends on Dimensions.ai coverage, metadata quality, record identifiers, and organization fields. The high-specificity analytic corpus is deliberately narrower than the screened anchor and may exclude relevant studies that use different terminology or lack an abstract. Conversely, literal matching and automated text representation cannot eliminate all false-positive or peripheral records. NMF components are model-based textual representations; their hard assignments simplify mixed publications. We therefore retain component weights and report assignment-margin sensitivities, but these do not independently validate theme names.
 
-Policy-document coverage is rare and database-recorded. The primary eligible sample has 111 covered publications; its estimates require caution, and lack of a recorded policy-document relation is not evidence of no real-world policy use. Country and institution counts are nonexclusive descriptive representations, are not population-adjusted, and may reflect uneven indexing and entity resolution. Finally, the association and permutation analyses do not identify causal effects, funding decisions, institutional intentions, policy endorsement, or policy impact.
+Policy-document coverage is rare and database-recorded. The primary eligible sample has 111 covered publications; its estimates require caution, and lack of a recorded policy-document relation is not evidence of no real-world policy use. Country and institution counts are nonexclusive descriptive representations, are not population-adjusted, and may reflect uneven indexing and entity resolution. Grant start dates and policy-document years are record metadata, not causal lags. Finally, the association and permutation analyses do not identify causal effects, funding decisions, institutional intentions, policy endorsement, or policy impact.
 
 \section{Conclusion}
 
-A transparently defined high-specificity publication corpus supports a stable four-theme representation of AI-and-mental-health research and retains sufficient grant and policy-document connections for relational analysis. Themes show different recorded funding-support and policy-document coverage patterns. Author affiliations, funders, and policy issuers provide a systematic institutional and country context. Local alignment of funding-support and policy-document coverage exceeds that expected under the publication-year-conditioned null. These findings map thematic and institutional relations in the database; they do not demonstrate causal institutional selection or policy impact.
+A transparently defined high-specificity publication corpus supports a stable four-theme representation and retains sufficient grant and policy-document connections for relational analysis. Themes show different recorded funding-support and policy-document coverage patterns. Author affiliations, funders, and policy issuers provide a systematic institutional and country context. Local alignment of funding-support and policy-document coverage exceeds that expected under the publication-year-conditioned null. These findings map thematic and institutional relations in the database; they do not demonstrate causal institutional selection or policy impact.
 
 \section*{Supplementary Materials}
 
