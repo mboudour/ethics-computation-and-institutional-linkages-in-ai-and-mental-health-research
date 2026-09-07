@@ -44,7 +44,7 @@ Item & Value \\
 \bottomrule
 \endfoot
 Screened publication anchor $P_0$ & 11,102 publications \\
-Records with available abstracts & 10,676 publications \\
+Records with available abstracts & 10,766 publications \\
 High-specificity analytic corpus $P$ & 7,146 publications (64.4\% of $P_0$) \\
 \end{longtable}
 
@@ -61,9 +61,9 @@ Components & Mean dominant weight & Share $\geq .60$ & Stability summary \\
 \endhead
 \bottomrule
 \endfoot
-2.0 &  &  & 8 resamples; mean cosine 0.999; mean assignment agreement 0.991 \\
-3.0 &  &  & 8 resamples; mean cosine 0.998; mean assignment agreement 0.990 \\
-4.0 &  &  & 8 resamples; mean cosine 0.998; mean assignment agreement 0.986 \\
+2 & .809 & 84.4\% & 8 resamples; mean cosine .999; mean assignment agreement .991 \\
+3 & .736 & 71.8\% & 8 resamples; mean cosine .998; mean assignment agreement .990 \\
+4 & .683 & 62.6\% & 8 resamples; mean cosine .998; mean assignment agreement .986 \\
 \end{longtable}
 
 \section*{S2. Component evidence and hard assignment}
@@ -81,10 +81,10 @@ Component & Twelve highest-weighted terms \\
 \endhead
 \bottomrule
 \endfoot
-Component 2 & risk, factors, depression, prediction, predicting, predictive, anxiety, predictors, regression, predict, 19, suicide \\
-Component 3 & ai, care, digital, ethical, challenges, technology, technologies, healthcare, human, potential, support, future \\
-Component 4 & detection, social media, media, emotion, deep, social, depression, recognition, accuracy, based, classification, proposed \\
-Component 5 & brain, disorder, psychiatric, disorders, schizophrenia, functional, clinical, diagnosis, biomarkers, mdd, psychiatric disorders, imaging \\
+Component 1 & risk, factors, depression, prediction, predicting, predictive, anxiety, predictors, regression, predict, 19, suicide \\
+Component 2 & ai, care, digital, ethical, challenges, technology, technologies, healthcare, human, potential, support, future \\
+Component 3 & detection, social media, media, emotion, deep, social, depression, recognition, accuracy, based, classification, proposed \\
+Component 4 & brain, disorder, psychiatric, disorders, schizophrenia, functional, clinical, diagnosis, biomarkers, mdd, psychiatric disorders, imaging \\
 \end{longtable}
 
 \begin{longtable}{@{}p{0.48\linewidth}@{\hspace{0.4em}}p{0.2\linewidth}@{\hspace{0.4em}}p{0.18\linewidth}@{}}
@@ -141,60 +141,60 @@ Model & Term & OR & 95\% CI & $p$ \\
 \endhead
 \bottomrule
 \endfoot
-Funding support & const & 0.03 & [0.03, 0.04] & 0.000 \\
-Funding support & Risk prediction & 4.13 & [3.45, 4.94] & 0.000 \\
-Funding support & Neuropsychiatric assessment & 4.45 & [3.71, 5.35] & 0.000 \\
+Funding support & const & 0.03 & [0.03, 0.04] & $<.001$ \\
+Funding support & Risk prediction & 4.13 & [3.45, 4.94] & $<.001$ \\
+Funding support & Neuropsychiatric assessment & 4.45 & [3.71, 5.35] & $<.001$ \\
 Funding support & Social/affective detection & 1.17 & [0.94, 1.45] & 0.160 \\
 Funding support & year\_centered & 0.99 & [0.96, 1.02] & 0.436 \\
-Funding support & log1p\_citations & 1.66 & [1.59, 1.74] & 0.000 \\
-Policy coverage, P through 2021 & const & 0.00 & [0.00, 0.00] & 0.000 \\
+Funding support & log1p\_citations & 1.66 & [1.59, 1.74] & $<.001$ \\
+Policy coverage, P through 2021 & const & 0.00 & [0.00, 0.00] & $<.001$ \\
 Policy coverage, P through 2021 & Risk prediction & 0.87 & [0.49, 1.54] & 0.626 \\
 Policy coverage, P through 2021 & Neuropsychiatric assessment & 0.37 & [0.20, 0.68] & 0.001 \\
 Policy coverage, P through 2021 & Social/affective detection & 0.49 & [0.25, 0.94] & 0.032 \\
 Policy coverage, P through 2021 & year\_centered & 0.99 & [0.92, 1.06] & 0.802 \\
-Policy coverage, P through 2021 & log1p\_citations & 2.97 & [2.44, 3.62] & 0.000 \\
-Policy coverage, P through 2020 & const & 0.00 & [0.00, 0.01] & 0.000 \\
+Policy coverage, P through 2021 & log1p\_citations & 2.97 & [2.44, 3.62] & $<.001$ \\
+Policy coverage, P through 2020 & const & 0.00 & [0.00, 0.01] & $<.001$ \\
 Policy coverage, P through 2020 & Risk prediction & 0.92 & [0.47, 1.78] & 0.798 \\
 Policy coverage, P through 2020 & Neuropsychiatric assessment & 0.44 & [0.22, 0.87] & 0.018 \\
 Policy coverage, P through 2020 & Social/affective detection & 0.59 & [0.28, 1.25] & 0.172 \\
 Policy coverage, P through 2020 & year\_centered & 1.04 & [0.95, 1.13] & 0.374 \\
-Policy coverage, P through 2020 & log1p\_citations & 2.89 & [2.31, 3.62] & 0.000 \\
-Funding support; margin at least .10 & const & 0.03 & [0.03, 0.04] & 0.000 \\
-Funding support; margin at least .10 & Risk prediction & 4.85 & [3.98, 5.90] & 0.000 \\
-Funding support; margin at least .10 & Neuropsychiatric assessment & 5.38 & [4.41, 6.57] & 0.000 \\
+Policy coverage, P through 2020 & log1p\_citations & 2.89 & [2.31, 3.62] & $<.001$ \\
+Funding support; margin at least .10 & const & 0.03 & [0.03, 0.04] & $<.001$ \\
+Funding support; margin at least .10 & Risk prediction & 4.85 & [3.98, 5.90] & $<.001$ \\
+Funding support; margin at least .10 & Neuropsychiatric assessment & 5.38 & [4.41, 6.57] & $<.001$ \\
 Funding support; margin at least .10 & Social/affective detection & 1.17 & [0.92, 1.49] & 0.188 \\
 Funding support; margin at least .10 & year\_centered & 1.00 & [0.97, 1.03] & 0.823 \\
-Funding support; margin at least .10 & log1p\_citations & 1.67 & [1.59, 1.75] & 0.000 \\
-Policy coverage, P through 2021; margin at least .10 & const & 0.00 & [0.00, 0.01] & 0.000 \\
+Funding support; margin at least .10 & log1p\_citations & 1.67 & [1.59, 1.75] & $<.001$ \\
+Policy coverage, P through 2021; margin at least .10 & const & 0.00 & [0.00, 0.01] & $<.001$ \\
 Policy coverage, P through 2021; margin at least .10 & Risk prediction & 0.84 & [0.45, 1.55] & 0.569 \\
 Policy coverage, P through 2021; margin at least .10 & Neuropsychiatric assessment & 0.33 & [0.17, 0.64] & 0.001 \\
 Policy coverage, P through 2021; margin at least .10 & Social/affective detection & 0.46 & [0.23, 0.93] & 0.032 \\
 Policy coverage, P through 2021; margin at least .10 & year\_centered & 0.99 & [0.92, 1.07] & 0.831 \\
-Policy coverage, P through 2021; margin at least .10 & log1p\_citations & 2.90 & [2.33, 3.62] & 0.000 \\
-Policy coverage, P through 2020; margin at least .10 & const & 0.00 & [0.00, 0.01] & 0.000 \\
+Policy coverage, P through 2021; margin at least .10 & log1p\_citations & 2.90 & [2.33, 3.62] & $<.001$ \\
+Policy coverage, P through 2020; margin at least .10 & const & 0.00 & [0.00, 0.01] & $<.001$ \\
 Policy coverage, P through 2020; margin at least .10 & Risk prediction & 0.89 & [0.43, 1.85] & 0.761 \\
 Policy coverage, P through 2020; margin at least .10 & Neuropsychiatric assessment & 0.41 & [0.20, 0.86] & 0.018 \\
 Policy coverage, P through 2020; margin at least .10 & Social/affective detection & 0.64 & [0.29, 1.42] & 0.274 \\
 Policy coverage, P through 2020; margin at least .10 & year\_centered & 1.05 & [0.96, 1.16] & 0.276 \\
-Policy coverage, P through 2020; margin at least .10 & log1p\_citations & 2.84 & [2.21, 3.66] & 0.000 \\
-Funding support; margin at least .20 & const & 0.03 & [0.02, 0.03] & 0.000 \\
-Funding support; margin at least .20 & Risk prediction & 5.50 & [4.44, 6.80] & 0.000 \\
-Funding support; margin at least .20 & Neuropsychiatric assessment & 6.18 & [4.99, 7.65] & 0.000 \\
+Policy coverage, P through 2020; margin at least .10 & log1p\_citations & 2.84 & [2.21, 3.66] & $<.001$ \\
+Funding support; margin at least .20 & const & 0.03 & [0.02, 0.03] & $<.001$ \\
+Funding support; margin at least .20 & Risk prediction & 5.50 & [4.44, 6.80] & $<.001$ \\
+Funding support; margin at least .20 & Neuropsychiatric assessment & 6.18 & [4.99, 7.65] & $<.001$ \\
 Funding support; margin at least .20 & Social/affective detection & 1.11 & [0.85, 1.45] & 0.464 \\
 Funding support; margin at least .20 & year\_centered & 1.01 & [0.98, 1.04] & 0.548 \\
-Funding support; margin at least .20 & log1p\_citations & 1.70 & [1.61, 1.80] & 0.000 \\
-Policy coverage, P through 2021; margin at least .20 & const & 0.00 & [0.00, 0.01] & 0.000 \\
+Funding support; margin at least .20 & log1p\_citations & 1.70 & [1.61, 1.80] & $<.001$ \\
+Policy coverage, P through 2021; margin at least .20 & const & 0.00 & [0.00, 0.01] & $<.001$ \\
 Policy coverage, P through 2021; margin at least .20 & Risk prediction & 0.82 & [0.43, 1.57] & 0.546 \\
-Policy coverage, P through 2021; margin at least .20 & Neuropsychiatric assessment & 0.28 & [0.14, 0.57] & 0.000 \\
+Policy coverage, P through 2021; margin at least .20 & Neuropsychiatric assessment & 0.28 & [0.14, 0.57] & $<.001$ \\
 Policy coverage, P through 2021; margin at least .20 & Social/affective detection & 0.46 & [0.21, 1.00] & 0.051 \\
 Policy coverage, P through 2021; margin at least .20 & year\_centered & 1.01 & [0.93, 1.10] & 0.839 \\
-Policy coverage, P through 2021; margin at least .20 & log1p\_citations & 2.81 & [2.23, 3.55] & 0.000 \\
-Policy coverage, P through 2020; margin at least .20 & const & 0.00 & [0.00, 0.01] & 0.000 \\
+Policy coverage, P through 2021; margin at least .20 & log1p\_citations & 2.81 & [2.23, 3.55] & $<.001$ \\
+Policy coverage, P through 2020; margin at least .20 & const & 0.00 & [0.00, 0.01] & $<.001$ \\
 Policy coverage, P through 2020; margin at least .20 & Risk prediction & 0.94 & [0.43, 2.04] & 0.876 \\
 Policy coverage, P through 2020; margin at least .20 & Neuropsychiatric assessment & 0.37 & [0.17, 0.80] & 0.012 \\
 Policy coverage, P through 2020; margin at least .20 & Social/affective detection & 0.67 & [0.28, 1.59] & 0.365 \\
 Policy coverage, P through 2020; margin at least .20 & year\_centered & 1.08 & [0.98, 1.19] & 0.111 \\
-Policy coverage, P through 2020; margin at least .20 & log1p\_citations & 2.68 & [2.07, 3.47] & 0.000 \\
+Policy coverage, P through 2020; margin at least .20 & log1p\_citations & 2.68 & [2.07, 3.47] & $<.001$ \\
 \end{longtable}
 
 \begin{longtable}{@{}p{0.28\linewidth}@{\hspace{0.4em}}p{0.25\linewidth}@{\hspace{0.4em}}p{0.13\linewidth}@{\hspace{0.4em}}p{0.13\linewidth}@{\hspace{0.4em}}p{0.13\linewidth}@{}}
@@ -590,7 +590,7 @@ Statistic & Obs. & Null mean & 95\% interval & Enrich. & $p$ \\
 \endhead
 \bottomrule
 \endfoot
-N publications with both funding-support and policy-document coverage & 80 & 50.95 & [41.00, 62.00] & 1.57 & 0.000 \\
+N publications with both funding-support and policy-document coverage & 80 & 50.95 & [41.00, 62.00] & 1.57 & $<.001$ \\
 Sum of publication funding-support degree × policy-coverage degree & 596 & 284.66 & [167.00, 480.00] & 2.09 & 0.011 \\
 \end{longtable}
 
