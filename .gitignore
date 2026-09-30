@@ -3,17 +3,31 @@ key.txt
 *.key
 *.env
 .env
+.streamlit/secrets.toml
 
 # Raw or reconstructed Dimensions records and record-level relations
 /data/
 raw_data/
 reconstructed_data/
+local_outputs/
 *.pkl
+*.pickle
 *.xlsx
+*.xls
+*.parquet
+*.feather
+*.sqlite
+*.db
+*.zip
+*.tar
+*.gz
 
-# Python build products
+# Python build products and local environments
 __pycache__/
 *.py[cod]
+.pytest_cache/
+.venv/
+venv/
 
 # Local editor and operating-system files
 .DS_Store
