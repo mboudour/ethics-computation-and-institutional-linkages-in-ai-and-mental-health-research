@@ -17,6 +17,8 @@ import streamlit as st
 TITLE = "Ethics, Computation, and Institutional Linkages in AI and Mental-Health Research"
 ROOT = Path(__file__).resolve().parent
 THEMATIC = ROOT / "derived_outputs" / "thematic"
+FIGURES = ROOT / "figures"
+REPOSITORY_URL = "https://github.com/mboudour/ethics-computation-and-institutional-linkages-in-ai-and-mental-health-research"
 
 THEME_ORDER = [
     "Mental-health risk prediction",
@@ -30,6 +32,44 @@ THEME_COLORS = {
     "Social and affective detection": "#d17a22",
     "Neuropsychiatric assessment": "#8f4b9e",
 }
+MANUSCRIPT_FIGURES = (
+    {
+        "number": 1,
+        "title": "Publication selection and four-theme text partition",
+        "pdf": "figure_1_study_design.pdf",
+        "caption": "The diagram summarizes the two-stage construction of the publication corpus, the high-specificity analytic filter, and the outcome-blind four-component NMF partition.",
+    },
+    {
+        "number": 2,
+        "title": "Four-theme composition",
+        "pdf": "figure_2_four_theme_composition.pdf",
+        "caption": "Hard assignment to the four publication-text themes in the high-specificity analytic corpus (n = 7,146). The companion panel reports assignment-margin categories.",
+    },
+    {
+        "number": 3,
+        "title": "Theme-based logistic-regression estimates",
+        "pdf": "figure_3_four_theme_associations.pdf",
+        "caption": "Adjusted associations of three publication themes with recorded funding-support and policy-document coverage relations, relative to digital mental-health care and ethics. Points show adjusted odds ratios and bars show 95% confidence intervals.",
+    },
+    {
+        "number": 4,
+        "title": "Country representation across themes",
+        "pdf": "figure_4_four_theme_country_landscapes.pdf",
+        "caption": "Country representation across the four publication themes for publication author affiliations, grant funders, and policy issuers. Representations are nonexclusive descriptive counts normalized within each relation-theme panel.",
+    },
+    {
+        "number": 5,
+        "title": "Institutional representation across themes",
+        "pdf": "figure_5_institution_landscapes.pdf",
+        "caption": "Institutional representation across the four publication themes for author affiliations, grant funders, and policy issuers. Within each panel, the eight institutions with the largest representation in the full thematic corpus are shown.",
+    },
+    {
+        "number": 6,
+        "title": "Local alignment of recorded relations",
+        "pdf": "figure_6_four_theme_local_alignment.pdf",
+        "caption": "Local alignment of recorded funding-support and policy-document coverage relations. The null panels compare observed extensive and intensive alignment statistics with 10,000 publication-year-stratified permutations.",
+    },
+)
 
 
 @st.cache_data(show_spinner=False)
@@ -330,6 +370,41 @@ def institutional_landscape() -> None:
     )
 
 
+def manuscript_figures() -> None:
+    st.header("Manuscript figures")
+    st.write(
+        "This gallery displays the six final figures cited in the accepted manuscript. The browser previews are rendered from the repository's authoritative PDFs; the PDF source for each figure is available below it."
+    )
+
+    for figure in MANUSCRIPT_FIGURES:
+        pdf_path = FIGURES / figure["pdf"]
+        preview_path = FIGURES / "previews" / f"{pdf_path.stem}.png"
+        st.subheader(f"Figure {figure['number']}. {figure['title']}")
+
+        if not preview_path.exists() or not pdf_path.exists():
+            st.error(f"The display preview for {figure['pdf']} is not available.")
+            continue
+
+        st.image(preview_path, caption=figure["caption"], width="stretch")
+        download, source = st.columns(2)
+        with download:
+            st.download_button(
+                "Download final PDF",
+                data=pdf_path.read_bytes(),
+                file_name=figure["pdf"],
+                mime="application/pdf",
+                key=f"download_figure_{figure['number']}",
+                width="stretch",
+            )
+        with source:
+            st.link_button(
+                "Open final PDF on GitHub",
+                f"{REPOSITORY_URL}/blob/master/figures/{figure['pdf']}",
+                width="stretch",
+            )
+        st.divider()
+
+
 def methods_and_access() -> None:
     st.header("Methods, access, and safeguards")
     st.markdown(
@@ -359,6 +434,7 @@ def main() -> None:
             "Thematic partition",
             "Recorded relations",
             "Institution and country",
+            "Manuscript figures",
             "Methods and data access",
         ],
     )
@@ -370,6 +446,7 @@ def main() -> None:
         "Thematic partition": thematic_partition,
         "Recorded relations": recorded_relations,
         "Institution and country": institutional_landscape,
+        "Manuscript figures": manuscript_figures,
         "Methods and data access": methods_and_access,
     }[page]()
 

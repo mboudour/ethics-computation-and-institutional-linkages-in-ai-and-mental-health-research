@@ -6,7 +6,9 @@ The study constructs a publication-centred relational system from Dimensions.ai 
 
 ## Explore the published aggregates
 
-A data-free interactive companion is included at [`streamlit_app.py`](streamlit_app.py). It reads only the repository's aggregate CSV outputs and presents the four-theme partition, recorded-relation rates and logistic-regression estimates, local alignment permutation results, and institution/country landscape summaries.
+**Open the live companion dashboard:** [ai-and-mental-health-research.streamlit.app](https://ai-and-mental-health-research.streamlit.app/)
+
+A data-free interactive companion is included at [`streamlit_app.py`](streamlit_app.py). It reads only the repository's aggregate CSV outputs and presents the four-theme partition, recorded-relation rates and logistic-regression estimates, local alignment permutation results, institution/country landscape summaries, and a full gallery of the six final manuscript figures.
 
 ```bash
 python -m pip install -r requirements.txt
